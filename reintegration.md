@@ -36,7 +36,8 @@ with a sandbox; the new workflow carries it by other means.
 
 - **Unsevered** is the successor workflow's name. The repo stays
   `tekii/severance`; the Severance name is kept as homage to the
-  workflow's beginnings.
+  workflow's beginnings. (2026-11-01: the repo moved to the user's
+  personal account; the name is unchanged.)
 - **Reading 2 — continuity is the point.** The name does not merely
   say "the boundary is gone"; it says every session inherits a
   continuous shared memory *from the repo*. The remaining severance is
