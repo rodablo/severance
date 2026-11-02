@@ -2,6 +2,8 @@
 
 ![Severed → Unsevered: two walled-off sessions converge into one lineage whose episodes keep their tapes](thumbnail-diagram.svg)
 
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/rodablo/severance)
+
 The Severance workflow experiment — as of 2026-11-01.
 
 ## What this is
