@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640">
+  <defs>
+    <!-- Background Gradient (MDR CRT Deep Slate/Teal) -->
+    <radialGradient id="crtBg" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#0d222f" />
+      <stop offset="65%" stop-color="#07131c" />
+      <stop offset="100%" stop-color="#03090e" />
+    </radialGradient>
+
+    <!-- Phosphor Glow Filters (using explicit userSpaceOnUse so horizontal lines never clip) -->
+    <filter id="glowCyan" filterUnits="userSpaceOnUse" x="0" y="0" width="1280" height="640">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowSoft" filterUnits="userSpaceOnUse" x="0" y="0" width="1280" height="640">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowStrong" filterUnits="userSpaceOnUse" x="0" y="0" width="1280" height="640">
+      <feGaussianBlur stdDeviation="6" result="blur1" />
+      <feGaussianBlur stdDeviation="2" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#183b4e" stroke-width="0.7" stroke-opacity="0.45" />
+    </pattern>
+
+    <!-- Scanline Pattern -->
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="#000000" stroke-width="1" stroke-opacity="0.22" />
+    </pattern>
+
+    <!-- Gradient for Reintegration Convergence -->
+    <linearGradient id="reintTop" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58a6ff" />
+      <stop offset="100%" stop-color="#39d353" />
+    </linearGradient>
+    <linearGradient id="reintBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f0883e" />
+      <stop offset="100%" stop-color="#39d353" />
+    </linearGradient>
+  </defs>
+
+  <!-- Base Screen -->
+  <rect width="1280" height="640" fill="url(#crtBg)" />
+  <rect width="1280" height="640" fill="url(#grid)" />
+
+  <!-- Outer Terminal Bezel Frame -->
+  <rect x="32" y="32" width="1216" height="576" rx="14" ry="14" fill="none" stroke="#234d64" stroke-width="2" />
+  <rect x="40" y="40" width="1200" height="560" rx="10" ry="10" fill="none" stroke="#153140" stroke-width="1" />
+
+  <!-- Top Telemetry Header Bar -->
+  <g font-family="monospace" font-size="13" fill="#5c8fa8" letter-spacing="2">
+    <text x="68" y="76">MDR // WORKFLOW MONITOR</text>
+    <text x="640" y="76" text-anchor="middle" fill="#7eb6d1">REINTEGRATION PROTOCOL — v1.0.1</text>
+    <text x="1212" y="76" text-anchor="end">SPEC + RECORD</text>
+  </g>
+  <line x1="56" y1="92" x2="1224" y2="92" stroke="#1e4458" stroke-width="1" />
+
+  <!-- Zone Headers -->
+  <g font-family="monospace" font-size="12" letter-spacing="2.5" font-weight="bold">
+    <text x="240" y="132" text-anchor="middle" fill="#6e9cb5">I. SEVERED ERA (SPATIAL SPLIT)</text>
+    <text x="515" y="132" text-anchor="middle" fill="#e3b341">II. REINTEGRATION</text>
+    <text x="895" y="132" text-anchor="middle" fill="#4deeea">III. UNSEVERED (EPISODE LINEAGE)</text>
+  </g>
+
+  <!-- ========================================================= -->
+  <!-- LEFT SIDE: SEVERED ERA (Two Walled-Off Parallel Sessions) -->
+  <!-- ========================================================= -->
+
+  <!-- Outie / Host Label & Wave (Top) -->
+  <text x="80" y="182" font-family="monospace" font-size="12" fill="#58a6ff" letter-spacing="1.5" font-weight="bold">OUTIE (HOST)</text>
+  <g filter="url(#glowCyan)">
+    <path d="M 80 250 
+             L 135 250 
+             Q 145 250, 152 228 T 168 272 T 184 236 T 200 250
+             L 265 250
+             Q 275 250, 284 226 T 300 274 T 316 238 T 332 250
+             L 400 250" 
+          fill="none" stroke="#58a6ff" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- Hard Architectural Wall / Barrier between Host and Container -->
+  <line x1="80" y1="320" x2="415" y2="320" stroke="#f85149" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.85" />
+  <rect x="155" y="308" width="160" height="24" rx="4" fill="#07131c" stroke="#f85149" stroke-width="1.2" />
+  <text x="235" y="324" text-anchor="middle" font-family="monospace" font-size="11" fill="#ff7b72" letter-spacing="1.5">WALLED MEMORY</text>
+
+  <!-- Innie / Container Wave & Label (Bottom) -->
+  <g filter="url(#glowCyan)">
+    <path d="M 80 390 
+             L 155 390 
+             Q 165 390, 174 368 T 190 412 T 206 376 T 222 390
+             L 285 390
+             Q 295 390, 304 366 T 320 414 T 336 378 T 352 390
+             L 400 390" 
+          fill="none" stroke="#f0883e" stroke-width="3" stroke-linecap="round" />
+  </g>
+  <text x="80" y="458" font-family="monospace" font-size="12" fill="#f0883e" letter-spacing="1.5" font-weight="bold">INNIE (CONTAINER)</text>
+
+  <!-- ========================================================= -->
+  <!-- CENTER: REINTEGRATION (Barrier Dissolves, Lines Converge) -->
+  <!-- ========================================================= -->
+
+  <!-- Vertical Reintegration Threshold Line -->
+  <line x1="515" y1="150" x2="515" y2="470" stroke="#e3b341" stroke-width="1" stroke-dasharray="4 6" opacity="0.65" />
+
+  <!-- Converging S-Curves -->
+  <g filter="url(#glowCyan)">
+    <path d="M 400 250 C 455 250, 465 320, 515 320" fill="none" stroke="url(#reintTop)" stroke-width="3.5" />
+    <path d="M 400 390 C 455 390, 465 320, 515 320" fill="none" stroke="url(#reintBottom)" stroke-width="3.5" />
+  </g>
+
+  <!-- ========================================================= -->
+  <!-- RIGHT SIDE: UNSEVERED (Git First-Parent Spine + Episodes) -->
+  <!-- ========================================================= -->
+
+  <!-- Main Unified First-Parent Git Spine (Mark across sessions) -->
+  <g filter="url(#glowStrong)">
+    <path d="M 515 320 L 1175 320" fill="none" stroke="#39d353" stroke-width="4" />
+    <polygon points="1192,320 1172,311 1172,329" fill="#39d353" />
+  </g>
+
+  <!-- Reintegration Node (Drawn over spine start) -->
+  <circle cx="515" cy="320" r="14" fill="#39d353" fill-opacity="0.25" filter="url(#glowStrong)" />
+  <circle cx="515" cy="320" r="7" fill="#07131c" stroke="#e3b341" stroke-width="3" filter="url(#glowCyan)" />
+  <circle cx="515" cy="320" r="3" fill="#ffffff" />
+
+  <!-- Episode 1 Branch Loop (Top: Brief -> Refiners -> Findings -> Merge) -->
+  <g filter="url(#glowCyan)">
+    <path d="M 595 320 C 620 320, 625 235, 655 235 L 765 235 C 795 235, 800 320, 825 320" 
+          fill="none" stroke="#4deeea" stroke-width="2.8" />
+  </g>
+  <!-- Episode 1 Nodes -->
+  <circle cx="655" cy="235" r="5.5" fill="#07131c" stroke="#4deeea" stroke-width="2.5" />
+  <circle cx="710" cy="235" r="5.5" fill="#07131c" stroke="#4deeea" stroke-width="2.5" />
+  <circle cx="765" cy="235" r="5.5" fill="#07131c" stroke="#4deeea" stroke-width="2.5" />
+  <text x="645" y="215" text-anchor="middle" font-family="monospace" font-size="11" fill="#8b949e">brief.md</text>
+  <text x="710" y="192" text-anchor="middle" font-family="monospace" font-size="12" fill="#4deeea" letter-spacing="1.5" font-weight="bold">REFINERS</text>
+  <text x="775" y="215" text-anchor="middle" font-family="monospace" font-size="11" fill="#8b949e">findings.md</text>
+
+  <!-- Episode 2 Branch Loop (Bottom: Next Episode across time) -->
+  <g filter="url(#glowCyan)">
+    <path d="M 865 320 C 890 320, 895 405, 925 405 L 1025 405 C 1055 405, 1060 320, 1085 320" 
+          fill="none" stroke="#4deeea" stroke-width="2.8" />
+  </g>
+  <!-- Episode 2 Nodes -->
+  <circle cx="925" cy="405" r="5.5" fill="#07131c" stroke="#4deeea" stroke-width="2.5" />
+  <circle cx="975" cy="405" r="5.5" fill="#07131c" stroke="#4deeea" stroke-width="2.5" />
+  <circle cx="1025" cy="405" r="5.5" fill="#07131c" stroke="#4deeea" stroke-width="2.5" />
+  <text x="975" y="438" text-anchor="middle" font-family="monospace" font-size="12" fill="#4deeea" letter-spacing="1.5" font-weight="bold">EPISODE T+1 (TAPES KEPT)</text>
+
+  <!-- First-Parent Commit Nodes on Main Spine -->
+  <g filter="url(#glowCyan)">
+    <circle cx="595" cy="320" r="6" fill="#07131c" stroke="#39d353" stroke-width="3" />
+    <circle cx="825" cy="320" r="7.5" fill="#39d353" stroke="#07131c" stroke-width="2" />
+    <circle cx="865" cy="320" r="6" fill="#07131c" stroke="#39d353" stroke-width="3" />
+    <circle cx="1085" cy="320" r="7.5" fill="#39d353" stroke="#07131c" stroke-width="2" />
+  </g>
+
+  <!-- Spine Labels (Devon & Mark) -->
+  <text x="595" y="348" text-anchor="middle" font-family="monospace" font-size="11" fill="#7ee787">PLAN</text>
+  <text x="820" y="348" text-anchor="middle" font-family="monospace" font-size="11" fill="#39d353" font-weight="bold">MERGE (DEVON)</text>
+  <text x="1085" y="294" text-anchor="middle" font-family="monospace" font-size="11" fill="#39d353" font-weight="bold">MERGE (DEVON)</text>
+  <text x="1192" y="352" text-anchor="end" font-family="monospace" font-size="12" fill="#39d353" letter-spacing="1.5" font-weight="bold">MARK (LINEAGE)</text>
+
+  <!-- ========================================================= -->
+  <!-- BOTTOM TYPOGRAPHY BANNER                                  -->
+  <!-- ========================================================= -->
+
+  <line x1="56" y1="490" x2="1224" y2="490" stroke="#1e4458" stroke-width="1" />
+
+  <!-- Main Title: SEVERED -> UNSEVERED -->
+  <g font-family="sans-serif" font-weight="700">
+    <text x="68" y="550" font-size="42" fill="#f0f6fc" letter-spacing="9">SEVERED</text>
+    <text x="342" y="546" font-size="30" fill="#5c8fa8" font-weight="400">→</text>
+    <text x="386" y="550" font-size="42" fill="#4deeea" letter-spacing="9" filter="url(#glowSoft)">UNSEVERED</text>
+  </g>
+
+  <!-- Subtitle / Tagline -->
+  <text x="70" y="582" font-family="monospace" font-size="13.5" fill="#8b949e" letter-spacing="2.5">
+    LAW, NOT SOFTWARE — CONTINUITY ACROSS AGENT SESSIONS VIA THE RECORD
+  </text>
+
+  <!-- Right Corner Badge -->
+  <g transform="translate(1040, 518)">
+    <rect x="0" y="0" width="174" height="56" rx="4" fill="#0b1d28" stroke="#2c5e7a" stroke-width="1.5" />
+    <text x="87" y="23" text-anchor="middle" font-family="monospace" font-size="11" fill="#7eb6d1" letter-spacing="1.5">TAPES ARCHIVED</text>
+    <text x="87" y="43" text-anchor="middle" font-family="monospace" font-size="12" fill="#39d353" font-weight="bold">episodes/*.md</text>
+  </g>
+
+  <!-- CRT Scanline Overlay -->
+  <rect width="1280" height="640" fill="url(#scanlines)" pointer-events="none" />
+</svg>

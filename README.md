@@ -1,19 +1,21 @@
 # Severance
 
+![Severed → Unsevered: two walled-off sessions converge into one lineage whose episodes keep their tapes](thumbnail-diagram.svg)
+
 The Severance workflow experiment — as of 2026-11-01.
 
 ## What this is
 
-Severance is a written workflow for running AI coding-agent sessions
-against one shared repository without any of them trampling the others
-or the truth. It is law, not software: a constitution, a handful of
+**Severance** is a workflow for running AI coding-agent sessions against a
+shared repository without any of them trampling the others' work or
+acting on a stale picture of what the repository actually holds. It is
+law, not software: a constitution, a set of
 conventions, and a learnings register, built into two artifacts a
-project vendors and loads into every session. The tooling is GNU Make
-and POSIX shell; there are no other dependencies.
+project vendors and loads into every session.
 
 **Continuity:** Every session ends and the next one wakes with no memory
-of it, so the repo has to carry what a person would carry in their
-head. The first form (July 2026) made that literal: two sessions, a
+of it, so the repo has to carry what a user would carry in their
+mind. The first form (July 2026) made that literal: two sessions, a
 host and a container, whose memories were architecturally invisible to
 each other and whose only channel was legislated. The second form,
 **Unsevered** (October 2026), keeps the premise but runs it across
@@ -25,8 +27,8 @@ it came from. An episode exists only because the user asked for it, and
 that instruction, quoted with its date, is the `trigger` in the brief's
 frontmatter, committed as the branch's first commit before any work
 begins. When the episode ends, the findings record the reviewer's
-verdict and the implementer's self-assessment, every deviation from the
-brief stated. Both stay under `episodes/`, not loaded by default but
+verdict, agent or human, and the implementer's self-assessment, every
+deviation from the brief stated. Both stay under `episodes/`, not loaded by default but
 consulted on demand, so when Mark starts a later episode it can read
 not only what changed but why, and what the last reviewer already said
 about it.
@@ -38,13 +40,12 @@ written to work on plain-English merits first.
 
 ## Why I started it
 
-This is the process side of my first attempt at coding with LLMs, and I
-set it up as an experiment from the start. The driver was a real
-deliverable: [Teppan](https://github.com/tekii/teppan.git), a
-static-site generator for my company, built with coding agents. The
-experiment had to succeed on both counts, the product and the method,
-so I could not afford a workflow that worked only when a session
-happened to behave.
+This is the workflow side of my first attempt at working with LLMs, set
+up as an experiment from the start. The driver was a real deliverable: [Teppan](https://github.com/tekii/teppan.git), an old
+static-site generator for my company, which I evolved with coding
+agents. The experiment had to succeed on both counts, the deliverable and
+the method, so I could not afford a workflow that worked only when a
+session happened to behave (LLMs often don't).
 
 Three convictions and one practical motive shaped it:
 
