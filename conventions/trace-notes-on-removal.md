@@ -1,7 +1,7 @@
 # Trace notes on removal
 
 When a change **removes or abandons a non-trivial, design-bearing
-mechanism**, the same change must **leave — or update — a trace note**
+mechanism**, the same change MUST **leave — or update — a trace note**
 in the consumer's knowledge tree. A *trace* is the preserved evidence of
 something that no longer exists in the code: enough of the lost design
 to revisit the decision later without re-deriving it from scratch.
@@ -21,8 +21,8 @@ behind it. Do not demand a note for every deleted hunk.
 
 ## What the note must capture
 
-Exactly what git history can't: history preserves the **bytes**, not the
-**why**.
+A trace note MUST capture what git history can't — history preserves
+the **bytes**, not the **why**:
 
 1. **The lost design's mechanics** — concrete enough to resurrect it.
 2. **Why it lost** — and whether the decision was *conditional* ("the
@@ -32,9 +32,9 @@ Exactly what git history can't: history preserves the **bytes**, not the
 3. **What would justify revisiting** — the trigger that should reopen
    the trade-off.
 
-An update to an existing note is fine — when a removal completes or
-extends a story an existing note already tells, extend that note rather
-than creating a near-duplicate file.
+Updating an existing note MAY satisfy this rule — when a removal
+completes or extends a story an existing note already tells, the author
+SHOULD extend that note rather than creating a near-duplicate file.
 
 ## Why
 

@@ -4,7 +4,7 @@
 
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/rodablo/severance)
 
-The Severance workflow experiment — as of 2026-11-01.
+The Severance workflow experiment — as of 2026-11-19.
 
 ## What this is
 
@@ -181,14 +181,15 @@ not bind; only mechanism does.
 
 ## Current status
 
-As of 2026-11-01 the repo is at **v1.0.1**, the second release of the
-Unsevered form; 48 commits and 9 release tags since the founding commit
+As of 2026-11-19 the repo is at **v1.1.0**, the third release of the
+Unsevered form; 52 commits and 10 release tags since the founding commit
 of 2026-07-08. One consumer project (Teppan) has run both forms of the
 workflow; the SPEC has been loaded into Claude Code and Antigravity
 sessions across three kinds of lane.
 
 | Date | Release | What changed |
 | --- | --- | --- |
+| 2026-11-19 | v1.1.0 | RFC 2119 + RFC 8174 modal keywords in the SPEC; epistemic voice by OKF document type |
 | 2026-10-29 | v1.0.1 | artifact frontmatter is valid YAML; the build quotes and lints it |
 | 2026-10-28 | v1.0.0 | Unsevered: the episode flow replaces the severed handoff; the host/container split retired |
 | 2026-07-21 | v0.3.1 | the resist-collapse rule generalized to a session's own command chains |

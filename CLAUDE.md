@@ -2,27 +2,30 @@
 
 This repo runs a **plain single-session lane** (mostly Claude Code web):
 no container, no role split, no consumer machinery (DESIGN.md,
-constraint 2). Safety is **boundaries, not severance**: commit or tag
-only when the user prompts it; never push without an explicit ask.
+constraint 2). Safety is **boundaries, not severance**: a session MUST
+commit or tag only when the user prompts it, and MUST NOT push without
+an explicit ask. Normative ALL-CAPS keywords (`MUST`, `MUST NOT`,
+`SHOULD`, `SHOULD NOT`, `MAY`) follow BCP 14 (RFC 2119, RFC 8174);
+lowercase forms keep their ordinary English meaning.
 
 ## Sources vs artifacts (the release discipline)
 
 - The small `*.md` **source files are the truth**. `SEVERANCE.md` and
   `RECORD.md` are **built** from them per `MANIFEST` by `make release`
-  — **never hand-edit the artifacts.**
-- Artifacts are rebuilt and committed **only in release commits** (the
-  tagged commits): edit sources → set `VERSION` → `make release` →
+  — **sessions MUST NOT hand-edit the artifacts.**
+- Artifacts MUST be rebuilt and committed **only in release commits**
+  (the tagged commits): edit sources → set `VERSION` → `make release` →
   commit `release vX.Y.Z: …` → `git tag -a vX.Y.Z`.
 - `make check` proves the committed artifacts equal a fresh rebuild.
   It MUST pass at every release commit. Between releases, source-only
-  commits may leave it reporting DRIFT (sources ahead of artifacts —
+  commits MAY leave it reporting DRIFT (sources ahead of artifacts —
   expected mid-cycle; say so in the commit message).
 
 ## Probe before proposing
 
-Before authoring or proposing any change, probe the current
-authoritative state: `git status -sb` + `git log` (fresh — not your
-session-start snapshot), read the actual target files, and check
+Before authoring or proposing any change, a session MUST probe the
+current authoritative state: `git status -sb` + `git log` (fresh — not
+your session-start snapshot), read the actual target files, and check
 in-flight work (`gh pr list`, pending artifacts). Memory, instructions,
 and snapshots are *hypotheses about* state — the probe is the only
 source of "is". Name what you checked, so the proposal is verifiable.
@@ -31,18 +34,20 @@ had.)
 
 ## Before any commit
 
-- Run `make check`; a failure must be either fixed or the known
+- Run `make check`; a failure MUST be either fixed or the known
   mid-cycle DRIFT, never a hand-edited artifact.
-- Path hygiene (conventions/no-user-specific-paths.md) — both empty:
+- Path hygiene (conventions/no-user-specific-paths.md) — both MUST be
+  empty:
   `git grep -iE '/(home|Users)/[A-Za-z0-9_.-]+/'` and
   `git grep -i '<your-login>'`.
-- Attribution (conventions/git-commit-attribution.md): AI mentions use
-  `Assisted-By:` — **never `Co-Authored-By:`**; some harness defaults
-  append it automatically — strip it.
+- Attribution (conventions/git-commit-attribution.md): AI mentions MUST
+  use `Assisted-By:` — **MUST NOT use `Co-Authored-By:`**; some harness
+  defaults append it automatically — strip it.
 
 ## Dependencies
 
-GNU Make + POSIX shell only. Do not add dependencies.
+GNU Make + POSIX shell only. Do not add dependencies (sessions MUST NOT
+introduce runtime or build dependencies).
 
 ## The law here is cargo, not law
 
@@ -52,15 +57,19 @@ consumer's test gate). Here the law is text you maintain: this repo
 is the vendor, has no `profile.md`, and commits on `master` by Devon's
 ruling — "the gate" here means `make check`, not a consumer's test
 suite. The one piece of the machinery this repo does keep is
-`episodes/`: its own briefs and findings, by the episodes convention. Rules this repo **does** self-apply: attribution and
-path hygiene (above), the learnings-register discipline (the register
-lives here), trace-notes thinking for design-bearing removals (via
-NOTES.md/DESIGN.md), and the conceit's anti-overstretch + casing rules
-in all prose.
+`episodes/`: its own briefs and findings, by the episodes convention.
+Rules this repo **does** self-apply: attribution and path hygiene
+(above), epistemic voice by document type
+(conventions/epistemic-voice.md — restrained ALL-CAPS modals in
+`Convention` / agent-instruction prose, `0` unquoted ALL-CAPS RFC 2119
+keywords in `Concept` / `Reference` / `Index` / `Vision` files), the
+learnings-register discipline (the register lives here), trace-notes
+thinking for design-bearing removals (via NOTES.md/DESIGN.md), and the
+conceit's anti-overstretch + casing rules in all prose.
 
 **No cast roles in attribution.** In prose the cast is the workflow's
 (Devon, Mark, Refiners); in this repo the user is simply the user and
-a session is simply a session. `Assisted-By:` lines name the
+a session is simply a session. `Assisted-By:` lines MUST name the
 **model**, never a cast role — write
 `Assisted-By: Claude (claude-<model-id>)`. (Historical commits signed
 "(Outie, …)" date from the extraction period, when the first

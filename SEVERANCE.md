@@ -1,11 +1,11 @@
 ---
 type: Convention
 title: "SEVERANCE — the Unsevered workflow (SPEC)"
-description: "The Severance workflow's binding law in its Unsevered form — constitution, the episodes convention and the other conventions, profile contract — amalgamated at v1.0.1. Vendored copy: do not edit; update by re-vendoring a release."
+description: "The Severance workflow's binding law in its Unsevered form — constitution, the episodes convention and the other conventions, profile contract — amalgamated at v1.1.0. Vendored copy: do not edit; update by re-vendoring a release."
 tags: [severance, spec, workflow, vendored]
-timestamp: 2026-10-29
-version: 1.0.1
-built-from: v1.0.1
+timestamp: 2026-11-19
+version: 1.1.0
+built-from: v1.1.0
 ---
 
 <!-- ═══ source: preamble.md ═══ -->
@@ -28,9 +28,19 @@ only sessions that read a repo, hold private memory, load configured
 context, and can spawn agents — it has been used with Claude Code and
 Antigravity.
 
-This artifact is generated — do not edit it; edit the sources in the
-Severance repo and re-release. Links in it are absolute by law: it is
-read from vendored locations where repo-relative paths are dead.
+This artifact is generated — consumers MUST NOT hand-edit it; edit the
+sources in the Severance repo and re-release. Links in it MUST be
+absolute: it is read from vendored locations where repo-relative paths
+are dead.
+
+**Normative keywords (BCP 14 — IETF RFC 2119, RFC 8174).** The key words
+`MUST`, `MUST NOT`, `REQUIRED`, `SHALL`, `SHALL NOT`, `SHOULD`,
+`SHOULD NOT`, `RECOMMENDED`, `NOT RECOMMENDED`, `MAY`, and `OPTIONAL` in
+this document are to be interpreted as described in BCP 14 (RFC 2119,
+RFC 8174) when, and only when, they appear in ALL CAPS, as shown here.
+Lowercase forms retain their ordinary English meaning. See "Epistemic
+voice by document type" below for how OKF document types govern voice
+across a consumer repository.
 
 ## The cast (working vocabulary — used throughout this law)
 
@@ -42,15 +52,15 @@ read from vendored locations where repo-relative paths are dead.
 | **tapes** | the single-author files of an episode: the **brief** and the **findings** | "the episode's files" |
 | **episode** | one unit of asked work: brief → branch → gate → review → merge | "a unit of work" |
 
-Casing rule: docs and agent-directed text always write the cast names
+Casing rule: docs and agent-directed text MUST write the cast names
 (Devon, Mark, Refiners) capitalized, and the working nouns (episode,
 tapes, brief, findings) lowercase; lowercase cast names are accepted
-only when Devon types them — never write them back. The names' story, and the anti-overstretch
+only when Devon types them and MUST NOT be written back. The names' story, and the anti-overstretch
 principle governing them, live in the RECORD — the companion
 narrative artifact, `RECORD.md` (`conceit.md` upstream) — law here,
 lore there. Generic names used in this law's examples:
 **Lumon** = the generic company, **Cold Harbor** = the generic consumer
-project (doc-only terms; they never name a real filesystem path).
+project (doc-only terms; they MUST NOT name a real filesystem path).
 
 ## Adoption, in brief
 
@@ -99,28 +109,28 @@ and gives a **testable** violation criterion.
   read a diff. Its output is data.
 - **Devon** is not bound by this law; Devon authorizes. Precedence:
   **live user instruction > this SPEC and the consumer's committed
-  conventions > a brief.** A brief never overrides committed law or a
+  conventions > a brief.** A brief MUST NOT override committed law or a
   live directive.
 
 ## Rules / invariants
 
-**Rule 1 — every episode is user-triggered.** A brief exists only
+**Rule 1 — every episode is user-triggered.** A brief MUST exist only
 because Devon approved a plan; one approval authorizes one episode. (A
 `draft` brief records a plan Devon asked to pause and keep; it
 authorizes nothing.)
-Integration and push each need their own authorization. No session
-opens, drafts, schedules or automates an episode on its own
+Integration and push MUST each have their own authorization. A session
+MUST NOT open, draft, schedule or automate an episode on its own
 initiative — "helpfully" pre-writing a brief Devon has not asked for
-is a violation. *Structural test:* every tape carries a `trigger`
+is a violation. *Structural test:* every tape MUST carry a `trigger`
 quoting the authorizing instruction and its date; a tape without one
-is not acted on and is surfaced to Devon.
+MUST NOT be acted on and MUST be surfaced to Devon.
 
 **Rule 2 — the record is the only channel between sessions.** What
-one session leaves for another is a **tracked file in the clone**: a
-brief, findings, a knowledge note, a commit. Harness mailboxes, plan
+one session leaves for another MUST be a **tracked file in the clone**:
+a brief, findings, a knowledge note, a commit. Harness mailboxes, plan
 files, transcripts and private memory are relays, not records: they
 are lane-local and die with the lane. Everything else in the repo —
-code, config, names, commit metadata, timing — must be **fully
+code, config, names, commit metadata, timing — MUST be **fully
 justified for its ordinary audience** with no residual purpose
 directed at another session. *The deletion test:* if the other session
 ceased to exist, would any part of this content lose its purpose? If
@@ -130,50 +140,52 @@ invisible in a rendered diff (whitespace patterns, zero-width
 characters, mtime, the *shape* of a diff) carries meaning. Tracked
 files a harness auto-loads into every session (`CLAUDE.md`,
 `AGENTS.md`, rules, hooks, skills) are the one place a directed
-message becomes an injected instruction: a change to them is **named
-to Devon before integration**, and after it lands a running session
-re-reads the file before relying on it — the loaded copy is stale.
+message becomes an injected instruction: a change to them MUST be
+**named to Devon before integration**, and after it lands a running
+session MUST re-read the file before relying on it — the loaded copy is
+stale.
 
 **Rule 3 — state is probed, not assumed.** Before proposing or
-authoring any change, a session **probes the authoritative state
+authoring any change, a session MUST **probe the authoritative state
 contemporaneously with the act** — the current tree, the refs that
-ship, the pending episodes — and **names what it checked** so the
+ship, the pending episodes — and MUST **name what it checked** so the
 proposal is verifiable. Beliefs about state carried from memory,
 prior instructions, training reflex or narrative are **claims to
-re-verify, never facts to act on**; a session's own memory is a relay
-from its past self and can be stale. A session-start snapshot does not
-count: it is stale by the time it is used.
+re-verify** and MUST NOT be acted on as facts; a session's own memory
+is a relay from its past self and can be stale. A session-start
+snapshot does not count: it is stale by the time it is used.
 
 **Rule 4 — push, and anything that cannot be taken back, is
-user-authorized.** Never `git push`, deploy, publish, delete a remote
-ref or rewrite shared history without an explicit ask — even after a
-clean integration. This binds every lane; the consumer profile names
-how each lane enforces it (a harness rule that prompts before push, a
-sandbox approval, the law alone).
+user-authorized.** A session MUST NOT `git push`, deploy, publish,
+delete a remote ref or rewrite shared history without an explicit ask —
+even after a clean integration. This binds every lane; the consumer
+profile names how each lane enforces it (a harness rule that prompts
+before push, a sandbox approval, the law alone).
 
 **Rule 5 — one Mark per checkout at a time.** Two sessions on one
 working copy share one HEAD; a checkout, reset or merge by one moves
-the other's ground. A second concurrent session works in a worktree
+the other's ground. A second concurrent session MUST work in a worktree
 or its own clone. Refiners satisfy this by construction.
 
-**Rule 6 — evidence, not claims.** The integrator runs the gate on
-the **exact merge candidate**; a relayed "it passed" is never acted
+**Rule 6 — evidence, not claims.** The integrator MUST run the gate on
+the **exact merge candidate**; a relayed "it passed" MUST NOT be acted
 on. A self-reported "verified" label is itself a relayed claim; a
-reviewer's citations are checked against the files before a fix is
+reviewer's citations MUST be checked against the files before a fix is
 made on their strength. A check that cannot fail is not a check, and
-an absence-based check first proves its subject exists.
+an absence-based check MUST first prove its subject exists.
 
 **Rule 7 — no experiments in the shared working tree.** Scratch,
-prototypes and probes go to session-private storage, addressed by
-**absolute paths**; a file-writing step never depends on an earlier
+prototypes and probes MUST go to session-private storage, addressed by
+**absolute paths**; a file-writing step MUST NOT depend on an earlier
 `cd` having succeeded (a write after a failed `mkdir && cd` lands in
 the tree, and an untracked file it overwrites has no history to
-recover from). Probe any write target that could land in the tree.
+recover from). A session MUST probe any write target that could land in
+the tree.
 
 **Rule 8 — state is written before stopping.** Whatever the next
-session would need to continue is **committed on the episode branch
-before the session ends**: progress, partial findings, a draft brief.
-Not in memory, not in chat.
+session would need to continue MUST be **committed on the episode
+branch before the session ends**: progress, partial findings, a draft
+brief. Not in memory, not in chat.
 
 ## The episode flow
 
@@ -199,101 +211,102 @@ Not in memory, not in chat.
 
 Where a consumer integrates on its **main branch** (`master` or
 `main`) directly — a *plain lane*: one session, no episode branch —
-steps 2–6 still produce the tapes; the commit that closes the episode
-carries what the merge message would.
+steps 2–6 MUST still produce the tapes; the commit that closes the
+episode MUST carry what the merge message would.
 
 ## Briefs resist collapse
 
 A brief states requirements, constraints, decisions taken and why, and
 acceptance checks — the implementer chooses the how. But **executable
-steps must resist collapse.** Assume the reader optimizes: a
+steps MUST resist collapse.** Assume the reader optimizes: a
 multi-step command sequence will be collapsed, reordered, or trimmed
 unless told why not. A step is **load-bearing** when collapsing,
 merging, reordering, or dropping it would change the end state or side
-effects (files, refs, cwd, timing) — not merely verbosity. Mark such a
-step at the point of use ("load-bearing — do not collapse") and name
-the concrete failure the ordering prevents; where feasible, prefer a
-form that stays correct under collapse (cwd-robust, idempotent) over
-relying on the marker. The rule binds **any command sequence a session
-emits — its own interactive shell chains included**, not only
-sequences authored into briefs or injected into agents; the canonical
-footgun is chaining state-reads after a teardown step whose side
-effect (cwd removal, ref deletion) the trailing steps depend on. A
-behavior-identical collapse needs no marker — over-annotation buries
-the real ones. And **label unverified claims** explicitly ("confirm on
-first run") and keep the labels through implementation: never
-silently upgrade them.
+effects (files, refs, cwd, timing) — not merely verbosity. Such a step
+MUST be marked at the point of use ("load-bearing — do not collapse")
+with the concrete failure the ordering prevents; where feasible,
+authors SHOULD prefer a form that stays correct under collapse
+(cwd-robust, idempotent) over relying on the marker. The rule binds
+**any command sequence a session emits — its own interactive shell
+chains included**, not only sequences authored into briefs or injected
+into agents; the canonical footgun is chaining state-reads after a
+teardown step whose side effect (cwd removal, ref deletion) the
+trailing steps depend on. A behavior-identical collapse needs no marker
+— over-annotation buries the real ones. Unverified claims MUST be
+**labeled explicitly** ("confirm on first run") and the labels kept
+through implementation: a session MUST NOT silently upgrade them.
 
 ## Refiners inherit
 
 These rules bind each session's spawned agents exactly as they bind
-the session — a session cannot launder a violation through a Refiner.
+the session — a session MUST NOT launder a violation through a Refiner.
 But **do not assume a Refiner has this law in its context** — a child
-may load none of it, or only a stale snapshot; inject the rules it
-needs, and when injecting rules or command sequences pass load-bearing
-steps **verbatim, markers and failure rationale intact** — a
-paraphrased protocol is a collapsed protocol, and the child cannot
-know what the summary dropped. Give a Refiner the narrowest tool
-profile its job needs: a read-only profile is the one hard lever a
-spawner has. And know the boundary's shape: worktree isolation stops
-a Refiner's *git* commands from reaching the main checkout; it does
-not stop a file write there (verified 2026-10-28 in Claude Code, local
-sandbox and cloud VM alike; other harnesses unverified). A brief says
-"write only under your worktree"; a consumer may enforce it with a
+may load none of it, or only a stale snapshot; the spawner MUST inject
+the rules the Refiner needs, and when injecting rules or command
+sequences MUST pass load-bearing steps **verbatim, markers and failure
+rationale intact** — a paraphrased protocol is a collapsed protocol,
+and the child cannot know what the summary dropped. A spawner SHOULD
+give each Refiner the narrowest tool profile its job needs: a read-only
+profile is the one hard lever a spawner has. And know the boundary's
+shape: worktree isolation stops a Refiner's *git* commands from
+reaching the main checkout; it does not stop a file write there
+(verified 2026-10-28 in Claude Code, local sandbox and cloud VM alike;
+other harnesses unverified). Briefs for worktree Refiners SHOULD state
+"write only under your worktree"; a consumer MAY enforce it with a
 pre-tool hook.
 
 ## Self-assessment before hand-back
 
 After implementing a brief — before handing back or committing the
-last of it — the implementer **re-walks the steps it actually took**
-against this SPEC, the consumer profile and the consumer's committed
-conventions, and **reports the result explicitly** in a findings tape
-of its own: every deviation, judgment call, improvisation or latitude
-exercised — and "no deviations" stated, never implied.
+last of it — the implementer MUST **re-walk the steps it actually
+took** against this SPEC, the consumer profile and the consumer's
+committed conventions, and MUST **report the result explicitly** in a
+findings tape of its own: every deviation, judgment call, improvisation
+or latitude exercised — and "no deviations" stated, never implied.
 
 ## The reviewer
 
-A review is worth what its independence is worth. The reviewer is a
-**fresh context** — a read-only Refiner, a second session, or another
+A review is worth what its independence is worth. The reviewer MUST be
+a **fresh context** — a read-only Refiner, a second session, or another
 model — given the brief and the diff and **not** Mark's reasoning or
-conclusion; cross-model when one is available. Its findings are
-committed on the branch as data; Mark verifies them (Rule 6) and
-decides. A reviewer that cannot commit writes the file, or returns
-its text for Mark to write, and Mark commits it, both named in the
+conclusion; cross-model when one is available. Its findings MUST be
+committed on the branch as data; Mark MUST verify them (Rule 6) and
+decide. A reviewer that cannot commit MAY write the file or return its
+text for Mark to write, and Mark MUST commit it, both named in the
 attribution.
 
 ## Refuse by handing back, never silently
 
 If verification refutes a claim in a brief, a cited location no
-longer matches the tree, or a precondition fails, **do not apply the bad part** and **do not
-silently comply or silently deviate**: write findings stating what is
-verified vs wrong, with the corrected mechanism, and stop. Mark
-revises the brief on Devon's trigger; the work resumes from the
-record.
+longer matches the tree, or a precondition fails, the implementer
+**MUST NOT apply the bad part** and **MUST NOT silently comply or
+silently deviate**: it MUST write findings stating what is verified vs
+wrong, with the corrected mechanism, and stop. Mark revises the brief
+on Devon's trigger; the work resumes from the record.
 
 ## Session memory hygiene
 
-Sessions may keep private memory — invisible to other lanes and to
+Sessions MAY keep private memory — invisible to other lanes and to
 Devon. Two rules keep it honest:
 
 - **Transient repo state expires.** A memory describing a *state* — a
-  deferral, a pending decision, "X is not yet done" — is a **claim to
-  re-verify** against the main branch and the episodes index before
-  acting on it, never a fact to recall as current. When re-verification
-  shows the state has moved, update or delete the memory in the same
-  turn.
-- **Memory is not a task ledger.** Pending or deferred work lives **in
-  the repo** — a pending episode, or a knowledge note marked
+  deferral, a pending decision, "X is not yet done" — MUST be
+  **re-verified** against the main branch and the episodes index before
+  acting on it, never recalled as current fact. When re-verification
+  shows the state has moved, the session MUST update or delete the
+  memory in the same turn.
+- **Memory is not a task ledger.** Pending or deferred work MUST live
+  **in the repo** — a pending episode, or a knowledge note marked
   "unimplemented" / "decision needed" — where every session *and Devon*
-  can see, audit and re-prioritize it. A memory may hold at most a
+  can see, audit and re-prioritize it. A memory MAY hold at most a
   *pointer* to repo-documented work plus private lessons about how to
-  do it; it must never be the only place a to-do exists. An invisible
+  do it; it MUST NOT be the only place a to-do exists. An invisible
   queue rots (rule above) and tempts self-initiated work (Rule 1).
 
 ## Lanes
 
-The law does not say where a session runs. A consumer's profile
-declares each lane it uses with three facts: its **boundary** (what
+The law does not say where a session runs. A consumer's profile MUST
+declare each lane it uses with three facts: its **boundary** (what
 stops a session mechanically — a VM, a container, a per-command
 sandbox), its **reach** (what the lane alone can do — credentials, a
 browser, the other model), and **how Rule 4 is enforced there**. Three
@@ -320,19 +333,20 @@ whole difference, and the point.
 
 ## Where episodes live
 
-`episodes/<date>-<topic>/` at the repo root — **beside** the knowledge
-tree (the consumer's directory of concept notes, e.g. `knowledge/`),
-never inside it: the knowledge tree holds what is currently true;
-episodes hold what happened. The directory has its own `index.md`
-(draft, then pending, then merged) and is **not** loaded into
-sessions by default — it is consulted on demand ("why did X change?")
-and at session start, to list the pending episodes. Date and topic
-are the identity; there is no numbering, no seasons, no arcs.
+Episodes MUST live at `episodes/<date>-<topic>/` at the repo root —
+**beside** the knowledge tree (the consumer's directory of concept
+notes, e.g. `knowledge/`), and MUST NOT be placed inside it: the
+knowledge tree holds what is currently true; episodes hold what
+happened. The directory MUST have its own `index.md` (draft, then
+pending, then merged) and SHOULD NOT be loaded into sessions by default
+— it is consulted on demand ("why did X change?") and at session start,
+to list the pending episodes. Date and topic are the identity; there is
+no numbering, no seasons, no arcs.
 
 ## Tapes and their frontmatter
 
-Every tape is OKF: a markdown file with YAML frontmatter. Required
-fields:
+Every tape MUST be OKF: a markdown file with YAML frontmatter.
+REQUIRED fields:
 
 ```
 type: Brief | Findings
@@ -347,48 +361,48 @@ status:       draft | pending | merged      (briefs only)
 reviewer:     who reviewed — a Refiner, a session, another model   (findings only)
 ```
 
-The frontmatter must parse: a value that contains `: ` or ` #`, or
-that begins with a quote or another YAML indicator, is written as one
-double-quoted scalar with inner `"` escaped as `\"` — a `trigger` is
-usually such a value (`trigger: "\"do X\" (Devon, 2026-10-28)"`). An
-unquoted `: ` reads as a nested mapping and the tape fails to render
-wherever it is vendored.
+The frontmatter MUST parse as valid YAML: a value that contains `: ` or
+` #`, or that begins with a quote or another YAML indicator, MUST be
+written as one double-quoted scalar with inner `"` escaped as `\"` — a
+`trigger` is usually such a value
+(`trigger: "\"do X\" (Devon, 2026-10-28)"`). An unquoted `: ` reads as
+a nested mapping and the tape fails to render wherever it is vendored.
 
-Single writer: each tape has one author; a reply is a new tape. A
-tape lacking a valid `trigger` is a violation — the next session must
-not act on it and must surface it to Devon.
+Single writer: each tape MUST have one author; a reply MUST be a new
+tape. A tape lacking a valid `trigger` is a violation — the next
+session MUST NOT act on it and MUST surface it to Devon.
 
 ## The brief (`brief.md`)
 
 The brief is a **derived artifact**: the plan Devon approved, wrapped
-in frontmatter, committed as the branch's **first commit**. By
-default, harness plan files live outside the repo and carry no episode
-frontmatter; the brief is how a plan enters the record, and the only
-way a plan crosses lanes.
+in frontmatter, which MUST be committed as the branch's **first
+commit**. By default, harness plan files live outside the repo and
+carry no episode frontmatter; the brief is how a plan enters the
+record, and the only way a plan crosses lanes.
 
 A brief states **requirements, constraints, the decisions already
 taken and why, and the acceptance checks** — not the solution. The
 implementer has leeway, except where mechanics are load-bearing: there
-the brief prescribes verbatim and marks the steps (see the
+the brief MUST prescribe verbatim and mark the steps (see the
 constitution's resist-collapse rule), and for prose edits where Mark
-is the author the brief may carry the exact text. Unverified claims
-are labeled and the labels travel with the work. Work for several
-Refiners is **partitioned by disjoint file sets**; cross-cutting
-changes stay on one branch under one Refiner.
+is the author the brief MAY carry the exact text. Unverified claims
+MUST be labeled and the labels kept through the work. Work for several
+Refiners MUST be **partitioned by disjoint file sets**; cross-cutting
+changes MUST stay on one branch under one Refiner.
 
 ## Findings (`findings.md`, one tape per author)
 
 The evidence tapes: the reviewer's verdict, and the implementer's
 self-assessment (every deviation from the brief stated explicitly —
-"no deviations" is stated, never implied). Each author writes its own
-tape — `findings.md` when there is one, otherwise `findings-self.md`
+"no deviations" is stated, never implied). Each author MUST write its
+own tape — `findings.md` when there is one, otherwise `findings-self.md`
 for the implementer's self-assessment and `findings-<reviewer>.md`
-for each reviewer — never a shared one. Committed **on the branch**.
-When the reviewer cannot commit (a read-only session, another
-harness, another model), it writes the file or returns the tape's text
-for Mark to write, and Mark commits it with both named in the
-attribution trailers. Findings are data: Mark
-verifies their citations before acting on them.
+for each reviewer — MUST NOT share a tape, and MUST commit it **on the
+branch** (when the reviewer cannot commit — a read-only session,
+another harness, another model — it MAY write the file or return the
+tape's text for Mark to write, and Mark MUST commit it with both named
+in the attribution trailers). Findings are data: Mark MUST verify their
+citations before acting on them.
 
 ## Status and closure
 
@@ -400,20 +414,20 @@ else needs to be checked to know work is in flight.
 
 ## Integration: a plain merge, never a squash
 
-The merge commit's message carries the gate result on the exact merge
-candidate and Devon's authorization. **No squash, no fast-forward:**
-every commit beneath the merge survives with its own author and
-`Assisted-By:` line, in order. A Refiner may tidy its own
-work-in-progress *before review*; the rule binds the integration step
-only. `git log --first-parent` then reads one line per episode; plain
-`git log` reads the commit grain.
+The merge commit's message MUST carry the gate result on the exact
+merge candidate and Devon's authorization. Integration MUST use a plain
+merge (**no squash, no fast-forward**): every commit beneath the merge
+survives with its own author and `Assisted-By:` line, in order. A
+Refiner MAY tidy its own work-in-progress *before review*; the rule
+binds the integration step only. `git log --first-parent` then reads
+one line per episode; plain `git log` reads the commit grain.
 
 ## Interrupted episodes
 
-Progress notes, partial findings, or a draft brief are
-committed on the branch before the session ends (constitution, Rule
-8). On ephemeral lanes uncommitted work dies with the lane — commit
-early, and ask Devon for the push (Rule 4).
+Progress notes, partial findings, or a draft brief MUST be committed on
+the branch before the session ends (constitution, Rule 8). On ephemeral
+lanes uncommitted work dies with the lane — sessions SHOULD commit
+early, and MUST ask Devon before pushing (Rule 4).
 
 ## Harness settings the convention depends on
 
@@ -421,32 +435,33 @@ early, and ask Devon for the push (Rule 4).
   default (verified 2026-10-28 in Claude Code: a local repo four
   commits ahead of origin spawned a Refiner that could not see them;
   Antigravity's `Workspace: branch` is documented as branching from
-  HEAD — unverified). Consumers worked on from a local checkout set
-  Claude Code's `worktree.baseRef: "head"` in project settings, or
+  HEAD — unverified). Consumers worked on from a local checkout SHOULD
+  set Claude Code's `worktree.baseRef: "head"` in project settings, or
   push before spawning.
 - Worktree isolation is a **git** boundary, not a write boundary
   (verified 2026-10-28 in Claude Code, in both the sandboxed local lane
   and the cloud VM; other harnesses unverified): the harness refuses
   git commands aimed at the main checkout, but a plain file write into
-  it succeeds. Briefs say "write only under your worktree"; a consumer
-  may mechanize that with a pre-tool hook.
-- A Refiner's worktree branch is folded into the episode branch by
-  Mark with a plain merge (or the Refiner commits on the episode
+  it succeeds. Briefs for worktree Refiners SHOULD say "write only
+  under your worktree"; a consumer MAY mechanize that with a pre-tool
+  hook.
+- A Refiner's worktree branch MUST be folded into the episode branch by
+  Mark with a plain merge (or the Refiner MAY commit on the episode
   branch directly when it is the only implementer). The last commit
-  on the branch before integration flips the brief to `status:
-  merged` and moves the index entry, so the merge commit carries the
-  closed record; in a plain lane the closing commit does both.
+  on the branch before integration MUST flip the brief to `status:
+  merged` and move the index entry, so the merge commit carries the
+  closed record; in a plain lane the closing commit MUST do both.
 
 <!-- ═══ source: conventions/git-commit-attribution.md ═══ -->
 
 # Git commit attribution
 
-When commit messages mention AI agents, always use `Assisted-By`, never
-use `Co-Authored-By`.
+When commit messages mention AI agents, they MUST use `Assisted-By` and
+MUST NOT use `Co-Authored-By`.
 
-A commit message carries only what this convention and the consumer's
+A commit message MUST carry only what this convention and the consumer's
 conventions sanction. **Trailers a harness proposes on its own —
-`Co-Authored-By:`, session links, tool banners — are stripped before
+`Co-Authored-By:`, session links, tool banners — MUST be stripped before
 the commit, every time.** The harness has no priority over the law,
 and a session-specific link in a public history is user data that
 should never have left the session.
@@ -460,8 +475,8 @@ whom* it happens to be checked out.
 
 ## Rule 1 — never commit a username or user-home path
 
-No tracked file may contain a **user-specific absolute path** — a real
-login name or a `/home/<login>/…` (or `/Users/<login>/…`,
+Tracked files MUST NOT contain a **user-specific absolute path** — a
+real login name or a `/home/<login>/…` (or `/Users/<login>/…`,
 `C:\Users\…`) path.
 
 - **Docs/links:** use **repo-relative** paths — never
@@ -477,7 +492,7 @@ login name or a `/home/<login>/…` (or `/Users/<login>/…`,
   (e.g. a dev container's standard `vscode` user) is not a personal
   login — it's the same on every machine, portable, and intentional.
   Only *personal* logins and host-home paths are forbidden.
-- **Check before committing:**
+- **Check before committing** (both MUST be empty):
   ```sh
   git grep -iE '/(home|Users)/[A-Za-z0-9_.-]+/' | grep -vE '/home/<fixed-tool-user>/'  # → empty
   git grep -i '<your-login>'                                                            # → empty
@@ -485,14 +500,14 @@ login name or a `/home/<login>/…` (or `/Users/<login>/…`,
 
 ## Rule 2 — never hardcode the workspace/checkout path; derive it
 
-The location and folder name of the checkout must not be baked into
+The location and folder name of the checkout MUST NOT be baked into
 tracked files:
 
-- **Build tooling:** derive roots from the invocation (`$(PWD)` +
+- **Build tooling:** MUST derive roots from the invocation (`$(PWD)` +
   `realpath` or equivalent) so builds run from **any** path — including
   ephemeral worktrees.
-- **Container plumbing:** derive from the container tooling's variables
-  (e.g. a devcontainer's `${localWorkspaceFolderBasename}` /
+- **Container plumbing:** MUST derive from the container tooling's
+  variables (e.g. a devcontainer's `${localWorkspaceFolderBasename}` /
   `${containerWorkspaceFolder}`), expose a `WORKSPACE_ROOT`-style env
   var, and make scripts/guards read **that** — never a literal path.
   Worktree parents derive from it. Git hooks stay path-free by design
@@ -513,7 +528,7 @@ tracked files:
 # Trace notes on removal
 
 When a change **removes or abandons a non-trivial, design-bearing
-mechanism**, the same change must **leave — or update — a trace note**
+mechanism**, the same change MUST **leave — or update — a trace note**
 in the consumer's knowledge tree. A *trace* is the preserved evidence of
 something that no longer exists in the code: enough of the lost design
 to revisit the decision later without re-deriving it from scratch.
@@ -533,8 +548,8 @@ behind it. Do not demand a note for every deleted hunk.
 
 ## What the note must capture
 
-Exactly what git history can't: history preserves the **bytes**, not the
-**why**.
+A trace note MUST capture what git history can't — history preserves
+the **bytes**, not the **why**:
 
 1. **The lost design's mechanics** — concrete enough to resurrect it.
 2. **Why it lost** — and whether the decision was *conditional* ("the
@@ -544,9 +559,9 @@ Exactly what git history can't: history preserves the **bytes**, not the
 3. **What would justify revisiting** — the trigger that should reopen
    the trade-off.
 
-An update to an existing note is fine — when a removal completes or
-extends a story an existing note already tells, extend that note rather
-than creating a near-duplicate file.
+Updating an existing note MAY satisfy this rule — when a removal
+completes or extends a story an existing note already tells, the author
+SHOULD extend that note rather than creating a near-duplicate file.
 
 ## Why
 
@@ -570,22 +585,25 @@ register preserves what each step *taught*.
 ## The rule
 
 When a change lands a **design-bearing step** (same threshold as trace
-notes — no entries for routine mechanical work), ask: *did this step
-teach something about working with AI agents?* If yes, record an entry.
-Entries generated inside a consumer project are **folded upstream** into
-the Severance RECORD at the next interchange Devon triggers for the
-purpose — law flows down in releases; experience flows back up in folds.
+notes — no entries for routine mechanical work), the session MUST ask:
+*did this step teach something about working with AI agents?* If yes, it
+MUST record an entry. Entries generated inside a consumer project are
+**folded upstream** into the Severance RECORD at the next interchange
+Devon triggers for the purpose — law flows down in releases; experience
+flows back up in folds.
 
 ## Entry format
+
+Each entry MUST include:
 
 - **Date + step** — what was attempted, with evidence pointers (commits,
   knowledge notes, incidents).
 - **Fact vs interpretation, separated** — what verifiably happened vs
   what it suggests. The write-up's credibility depends on this line
   staying sharp.
-- **Learner attribution** — a lesson is marked as a *model finding*
-  (verified against code/history) or *user-verified* (see below); never
-  silently assume both.
+- **Learner attribution** — a lesson MUST be marked as a *model finding*
+  (verified against code/history) or *user-verified* (see below);
+  sessions MUST NOT silently assume both.
 
 ## The comprehension interview
 
@@ -596,10 +614,10 @@ demand):
 
 - The session conducts a **short interview** — 3–5 questions derived
   from the step's lessons, answered without looking things up.
-- The entry's lesson is marked **user-verified** only after the
+- The entry's lesson MUST be marked **user-verified** only after the
   interview confirms it. Partial or missed answers are **data, not
-  failure** — they get recorded (that gap is a result of the experiment)
-  and trigger a re-explanation.
+  failure** — they MUST be recorded (that gap is a result of the
+  experiment) and trigger a re-explanation.
 - The interview happens in-session between Devon and one agent; it is
   not an interchange and involves no cross-session traffic.
 
@@ -611,25 +629,81 @@ repo-visibility (per the constitution's session-memory-hygiene rules):
 lessons live in tracked files, where every session and Devon can see
 them — never only in a session's private memory.
 
+<!-- ═══ source: conventions/epistemic-voice.md ═══ -->
+
+# Epistemic voice by document type
+
+In an OKF repository (markdown files headed by YAML frontmatter whose
+`type` names the document's role), grammatical voice MUST match
+document `type` so a single sentence read in isolation — in a search
+hit, a review citation, or loaded context — signals its epistemic force
+to humans and sessions alike:
+
+- **`Convention`** (this SPEC, the consumer's `profile.md`, committed
+  convention notes, and auto-loaded root agent instructions such as
+  `CLAUDE.md` and `AGENTS.md`) — **restrained normative voice** under
+  BCP 14 (IETF RFC 2119 and RFC 8174). Binding invariants use `MUST` /
+  `MUST NOT` (`REQUIRED`, `SHALL`, `SHALL NOT`); strong overrideable
+  defaults use `SHOULD` / `SHOULD NOT` (`RECOMMENDED`,
+  `NOT RECOMMENDED`); explicit optional allowances use `MAY` (`OPTIONAL`).
+  Per RFC 2119 §6, imperatives MUST be used sparingly — rationale
+  (`Why`), motivation, cast descriptions, and examples stay in natural
+  prose — and per RFC 8174, lowercase `"must"`, `"should"`, and `"may"`
+  retain their ordinary English meaning. Authors MUST NOT harden
+  optional or default guidance into `MUST`.
+- **`Concept`, `Reference`, `Index`** (the consumer's knowledge tree of
+  verified reality, reference records such as `RECORD.md`, and directory
+  indexes) — **present-tense indicative voice** describing verified
+  built truth. These files MUST contain `0` unquoted ALL-CAPS RFC 2119
+  keywords (literal mentions quoting a convention or token sit in quotes
+  or backticks).
+- **`Register`** (dated logs of lessons, rulings, or open items, such as
+  the learnings register) — **dated past-tense provenance** separating
+  verifiable occurrence from inference (`Fact:` vs. `Interpretation:`,
+  per the learnings-register convention), or explicit open/deferred
+  status markers. Verbatim historical quotes and dated entries MUST NOT
+  be rewritten retroactively to fit later conventions.
+- **`Vision`** (where a consumer maintains a sibling aspirational tree
+  beside its knowledge tree) — **causal directional compass voice**
+  stating problem, direction, and trade-offs. `Vision` files MUST
+  contain `0` unquoted ALL-CAPS RFC 2119 keywords (`0` `MUST` / `SHALL`)
+  and SHOULD avoid lowercase normative `"must"` and `"shall"` so
+  aspirational notes never impersonate ratified specifications or invite
+  untriggered work (constitution, Rule 1).
+
+Episode tapes (`type: Brief | Findings`) follow the episodes convention:
+a brief states one authorized episode's requirements and acceptance
+checks without overriding committed `Convention` law, and findings
+report dated verification evidence.
+
+## Why
+
+Sessions wake with no memory and routinely retrieve individual
+paragraphs out of surrounding context. When descriptive notes borrow
+`MUST` or aspirational notes read like ratified specs, an agent treats
+outdated description as law or unapproved direction as an instruction.
+Binding voice to `type` makes epistemic status local to the sentence and
+mechanically checkable.
+
 <!-- ═══ source: profile-contract.md ═══ -->
 
 # The profile contract
 
 Every consumer project MUST provide a **`profile.md`** vendored beside
 this SPEC, answering the questions this law deliberately leaves open.
-An adoption without a complete profile is visibly incomplete. Required
+An adoption without a complete profile is visibly incomplete. REQUIRED
 sections:
 
 ## Gate
 
-The command(s) every integration must pass, with explicit pass
+The command(s) every integration MUST pass, with explicit pass
 criteria (e.g. Cold Harbor: `make test` — every assertion PASS, 0
-FAIL). Mark runs it on the exact merge candidate; nothing merges
+FAIL). Mark MUST run it on the exact merge candidate; nothing merges
 without it.
 
 ## Lanes
 
-One entry per lane the project is worked on from. Each names:
+One entry per lane the project is worked on from. Each entry MUST name:
 
 - **the boundary** — what stops a session mechanically (a cloud VM, a
   container with its own clone, a per-command sandbox on a host);
@@ -643,7 +717,8 @@ One entry per lane the project is worked on from. Each names:
   grants the lane needs; plus the setting that branches Refiners from
   the local HEAD where the lane works on a local checkout.
 
-Lanes are declaration-only: name them by their technical kind.
+Lanes are declaration-only: profiles MUST name them by their technical
+kind.
 
 ## Episode mechanics
 

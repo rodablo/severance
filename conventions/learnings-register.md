@@ -12,22 +12,25 @@ register preserves what each step *taught*.
 ## The rule
 
 When a change lands a **design-bearing step** (same threshold as trace
-notes — no entries for routine mechanical work), ask: *did this step
-teach something about working with AI agents?* If yes, record an entry.
-Entries generated inside a consumer project are **folded upstream** into
-the Severance RECORD at the next interchange Devon triggers for the
-purpose — law flows down in releases; experience flows back up in folds.
+notes — no entries for routine mechanical work), the session MUST ask:
+*did this step teach something about working with AI agents?* If yes, it
+MUST record an entry. Entries generated inside a consumer project are
+**folded upstream** into the Severance RECORD at the next interchange
+Devon triggers for the purpose — law flows down in releases; experience
+flows back up in folds.
 
 ## Entry format
+
+Each entry MUST include:
 
 - **Date + step** — what was attempted, with evidence pointers (commits,
   knowledge notes, incidents).
 - **Fact vs interpretation, separated** — what verifiably happened vs
   what it suggests. The write-up's credibility depends on this line
   staying sharp.
-- **Learner attribution** — a lesson is marked as a *model finding*
-  (verified against code/history) or *user-verified* (see below); never
-  silently assume both.
+- **Learner attribution** — a lesson MUST be marked as a *model finding*
+  (verified against code/history) or *user-verified* (see below);
+  sessions MUST NOT silently assume both.
 
 ## The comprehension interview
 
@@ -38,10 +41,10 @@ demand):
 
 - The session conducts a **short interview** — 3–5 questions derived
   from the step's lessons, answered without looking things up.
-- The entry's lesson is marked **user-verified** only after the
+- The entry's lesson MUST be marked **user-verified** only after the
   interview confirms it. Partial or missed answers are **data, not
-  failure** — they get recorded (that gap is a result of the experiment)
-  and trigger a re-explanation.
+  failure** — they MUST be recorded (that gap is a result of the
+  experiment) and trigger a re-explanation.
 - The interview happens in-session between Devon and one agent; it is
   not an interchange and involves no cross-session traffic.
 

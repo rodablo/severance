@@ -2,19 +2,19 @@
 
 Every consumer project MUST provide a **`profile.md`** vendored beside
 this SPEC, answering the questions this law deliberately leaves open.
-An adoption without a complete profile is visibly incomplete. Required
+An adoption without a complete profile is visibly incomplete. REQUIRED
 sections:
 
 ## Gate
 
-The command(s) every integration must pass, with explicit pass
+The command(s) every integration MUST pass, with explicit pass
 criteria (e.g. Cold Harbor: `make test` — every assertion PASS, 0
-FAIL). Mark runs it on the exact merge candidate; nothing merges
+FAIL). Mark MUST run it on the exact merge candidate; nothing merges
 without it.
 
 ## Lanes
 
-One entry per lane the project is worked on from. Each names:
+One entry per lane the project is worked on from. Each entry MUST name:
 
 - **the boundary** — what stops a session mechanically (a cloud VM, a
   container with its own clone, a per-command sandbox on a host);
@@ -28,7 +28,8 @@ One entry per lane the project is worked on from. Each names:
   grants the lane needs; plus the setting that branches Refiners from
   the local HEAD where the lane works on a local checkout.
 
-Lanes are declaration-only: name them by their technical kind.
+Lanes are declaration-only: profiles MUST name them by their technical
+kind.
 
 ## Episode mechanics
 

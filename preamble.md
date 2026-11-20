@@ -16,9 +16,19 @@ only sessions that read a repo, hold private memory, load configured
 context, and can spawn agents — it has been used with Claude Code and
 Antigravity.
 
-This artifact is generated — do not edit it; edit the sources in the
-Severance repo and re-release. Links in it are absolute by law: it is
-read from vendored locations where repo-relative paths are dead.
+This artifact is generated — consumers MUST NOT hand-edit it; edit the
+sources in the Severance repo and re-release. Links in it MUST be
+absolute: it is read from vendored locations where repo-relative paths
+are dead.
+
+**Normative keywords (BCP 14 — IETF RFC 2119, RFC 8174).** The key words
+`MUST`, `MUST NOT`, `REQUIRED`, `SHALL`, `SHALL NOT`, `SHOULD`,
+`SHOULD NOT`, `RECOMMENDED`, `NOT RECOMMENDED`, `MAY`, and `OPTIONAL` in
+this document are to be interpreted as described in BCP 14 (RFC 2119,
+RFC 8174) when, and only when, they appear in ALL CAPS, as shown here.
+Lowercase forms retain their ordinary English meaning. See "Epistemic
+voice by document type" below for how OKF document types govern voice
+across a consumer repository.
 
 ## The cast (working vocabulary — used throughout this law)
 
@@ -30,15 +40,15 @@ read from vendored locations where repo-relative paths are dead.
 | **tapes** | the single-author files of an episode: the **brief** and the **findings** | "the episode's files" |
 | **episode** | one unit of asked work: brief → branch → gate → review → merge | "a unit of work" |
 
-Casing rule: docs and agent-directed text always write the cast names
+Casing rule: docs and agent-directed text MUST write the cast names
 (Devon, Mark, Refiners) capitalized, and the working nouns (episode,
 tapes, brief, findings) lowercase; lowercase cast names are accepted
-only when Devon types them — never write them back. The names' story, and the anti-overstretch
+only when Devon types them and MUST NOT be written back. The names' story, and the anti-overstretch
 principle governing them, live in the RECORD — the companion
 narrative artifact, `RECORD.md` (`conceit.md` upstream) — law here,
 lore there. Generic names used in this law's examples:
 **Lumon** = the generic company, **Cold Harbor** = the generic consumer
-project (doc-only terms; they never name a real filesystem path).
+project (doc-only terms; they MUST NOT name a real filesystem path).
 
 ## Adoption, in brief
 

@@ -5,8 +5,8 @@ whom* it happens to be checked out.
 
 ## Rule 1 — never commit a username or user-home path
 
-No tracked file may contain a **user-specific absolute path** — a real
-login name or a `/home/<login>/…` (or `/Users/<login>/…`,
+Tracked files MUST NOT contain a **user-specific absolute path** — a
+real login name or a `/home/<login>/…` (or `/Users/<login>/…`,
 `C:\Users\…`) path.
 
 - **Docs/links:** use **repo-relative** paths — never
@@ -22,7 +22,7 @@ login name or a `/home/<login>/…` (or `/Users/<login>/…`,
   (e.g. a dev container's standard `vscode` user) is not a personal
   login — it's the same on every machine, portable, and intentional.
   Only *personal* logins and host-home paths are forbidden.
-- **Check before committing:**
+- **Check before committing** (both MUST be empty):
   ```sh
   git grep -iE '/(home|Users)/[A-Za-z0-9_.-]+/' | grep -vE '/home/<fixed-tool-user>/'  # → empty
   git grep -i '<your-login>'                                                            # → empty
@@ -30,14 +30,14 @@ login name or a `/home/<login>/…` (or `/Users/<login>/…`,
 
 ## Rule 2 — never hardcode the workspace/checkout path; derive it
 
-The location and folder name of the checkout must not be baked into
+The location and folder name of the checkout MUST NOT be baked into
 tracked files:
 
-- **Build tooling:** derive roots from the invocation (`$(PWD)` +
+- **Build tooling:** MUST derive roots from the invocation (`$(PWD)` +
   `realpath` or equivalent) so builds run from **any** path — including
   ephemeral worktrees.
-- **Container plumbing:** derive from the container tooling's variables
-  (e.g. a devcontainer's `${localWorkspaceFolderBasename}` /
+- **Container plumbing:** MUST derive from the container tooling's
+  variables (e.g. a devcontainer's `${localWorkspaceFolderBasename}` /
   `${containerWorkspaceFolder}`), expose a `WORKSPACE_ROOT`-style env
   var, and make scripts/guards read **that** — never a literal path.
   Worktree parents derive from it. Git hooks stay path-free by design

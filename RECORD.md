@@ -1,11 +1,11 @@
 ---
 type: Reference
 title: "SEVERANCE — experiment record (RECORD)"
-description: "The Severance experiment's narrative record — conceit, prior art, learnings register, the reintegration (Severance → Unsevered) and the trace of the retired machinery — built at v1.0.1. For human readers; not loaded into sessions."
+description: "The Severance experiment's narrative record — conceit, prior art, learnings register, the reintegration (Severance → Unsevered) and the trace of the retired machinery — built at v1.1.0. For human readers; not loaded into sessions."
 tags: [severance, record, experiment]
-timestamp: 2026-10-29
-version: 1.0.1
-built-from: v1.0.1
+timestamp: 2026-11-19
+version: 1.1.0
+built-from: v1.1.0
 ---
 
 <!-- ═══ source: conceit.md ═══ -->
@@ -1003,7 +1003,8 @@ with a sandbox; the new workflow carries it by other means.
 
 - **Unsevered** is the successor workflow's name. The repo stays
   `tekii/severance`; the Severance name is kept as homage to the
-  workflow's beginnings.
+  workflow's beginnings. (2026-11-01: the repo moved to the user's
+  personal account; the name is unchanged.)
 - **Reading 2 — continuity is the point.** The name does not merely
   say "the boundary is gone"; it says every session inherits a
   continuous shared memory *from the repo*. The remaining severance is
