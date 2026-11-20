@@ -49,7 +49,10 @@ Who reviews — a read-only Refiner, a second session, another model —
 and how read-only is enforced for it (tool profile, plan mode, a deny
 rule). If the reviewer cannot commit, say how its findings reach the
 branch (it writes the file or returns its text; Mark commits, both
-attributed).
+attributed). The section MUST also say when a brief calls for a
+cross-model review instead of the default (e.g. changes to
+conventions or the gate, a trace-note removal, Devon's call at plan
+approval): a same-model reviewer shares Mark's blind spots.
 
 ## Implementation docs
 

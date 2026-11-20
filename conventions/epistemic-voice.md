@@ -16,8 +16,16 @@ to humans and sessions alike:
   Per RFC 2119 §6, imperatives MUST be used sparingly — rationale
   (`Why`), motivation, cast descriptions, and examples stay in natural
   prose — and per RFC 8174, lowercase `"must"`, `"should"`, and `"may"`
-  retain their ordinary English meaning. Authors MUST NOT harden
-  optional or default guidance into `MUST`.
+  retain their ordinary English meaning. The keyword follows the rule's
+  own stated reason: a rule whose reason is a harm (lost work, a write
+  outside its boundary, an unreviewed or unauthorized integration) is
+  an invariant and takes `MUST` / `MUST NOT`; a rule whose reason is
+  convenience, consistency, or style is a default and takes `SHOULD` /
+  `SHOULD NOT`. Authors MUST NOT harden optional or default guidance
+  into `MUST`, and MUST NOT soften an existing rule into `SHOULD` or
+  `MAY`: giving a sentence a keyword it did not have, or changing the
+  one it has, rules on its force — a change to the law, reviewed as
+  one.
 - **`Concept`, `Reference`, `Index`** (the consumer's knowledge tree of
   verified reality, reference records such as `RECORD.md`, and directory
   indexes) — **present-tense indicative voice** describing verified
@@ -51,3 +59,8 @@ paragraphs out of surrounding context. When descriptive notes borrow
 outdated description as law or unapproved direction as an instruction.
 Binding voice to `type` makes epistemic status local to the sentence and
 mechanically checkable.
+
+The guard on force runs both ways because the two failures differ in
+how they show. A hardened sentence over-binds and someone objects; a
+softened safety rule fails silently — the session that skips it is
+compliant.

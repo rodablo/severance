@@ -58,10 +58,91 @@ replaced by one-line pointers when they do.
   integration; re-read after landing) — restored on the cross-model
   audit's finding F6.
 
+## Graduated (v1.1.0)
+
+- **Modal keywords and epistemic voice** → preamble.md (the BCP 14
+  declaration), every `[spec]` source (ALL-CAPS keywords), and the new
+  `conventions/epistemic-voice.md` (voice by OKF document type).
+  Upstreamed from a consumer's knowledge tree by a Gemini session in
+  Antigravity and landed as one release commit. Recorded as fact: no
+  brief, no findings and no independent review exist for it under
+  `episodes/` — the v1.0.0 law rewrite had all three.
+
+## Graduated (v1.1.1)
+
+- **Read-only audit of v1.1.0** (2026-11-20) → three rules the keyword
+  pass had softened restored (episodes directory not loaded by default;
+  "write only under your worktree" back to `MUST`; a reviewer that
+  cannot commit `MUST` either write the file or return its text); the
+  README's release badge made static and owner-free. The fourth
+  softening (narrowest tool profile, `SHOULD`) was left to stand.
+
+## Graduated (next release — the reviewer tier)
+
+- **SPEC wording: "cross-model when one is available"** (raised by
+  Devon, 2026-10-29) → constitution.md "The reviewer": a cross-model
+  review is required only when the brief calls for it; profile-contract
+  "Reviewer" has the consumer say when briefs do. Why: the old phrase
+  read as "mandatory whenever another model exists", and one agy audit
+  per episode costs two relays by hand plus Mark's citation check
+  (Rule 6; agy fabricated quotes in two of three runs). Cost of the
+  tier, stated: a same-model Refiner shares Mark's blind spots — this
+  repo's first episode's one law gap (the auto-load clause, F6) was
+  found by agy alone. Parked through v1.1.0 and v1.1.1.
+
+## Graduated (next release — the v1.1.0 review)
+
+- **v1.1.0 has no episode record** → Devon ruled for a retroactive
+  review (2026-11-20). A fresh-context, read-only Refiner compared the
+  SPEC sources at v1.0.1 and v1.1.0 sentence by sentence; its tape is
+  `episodes/2026-11-20-keyword-pass-review/findings-fresh-read.md`
+  (no brief: there was none to review against but the release's own
+  claim). It reported the audit's four softenings unprompted and eight
+  further changes.
+- **Five more rules restored to their v1.0.1 force** (Devon's ruling on
+  the tape's findings): the narrowest tool profile for a Refiner is
+  `MUST` again (F2, left to stand at v1.1.1); on ephemeral lanes a
+  session `MUST` commit early and ask Devon for the push — a prompt to
+  act, not a restatement of Rule 4 (F3); a consumer on a local checkout
+  `MUST` either set the base-ref setting or push before spawning (F4);
+  the generated artifact `MUST NOT` be edited, by anyone and by any
+  means (F9); the example names "never name" a real path — a
+  description again, not a prohibition (F10).
+- **The epistemic-voice convention guards one direction** →
+  conventions/epistemic-voice.md: the guard on force now runs both
+  ways (no hardening, no softening; choosing or changing a keyword is
+  a law change, reviewed as one), and the keyword follows the rule's
+  own stated reason — a harm makes an invariant, convenience or style
+  a default. Why: the convention forbade hardening only, and ten
+  softenings passed under it in the commit that introduced it; it also
+  gave no test for telling an invariant from a default (the review's
+  finding). By that test the five restorations hold, and F6 and F8,
+  left as `SHOULD`, are defaults.
+
 ## Open items
+- **SPEC size against the token budget — measure, then decide.** The
+  `[spec]` sources stand at 5,753 words in the working tree (5,052 at
+  v1.0.1, 5,699 at v1.1.0); by the v0.1.0 ratio (4.6k words → 8.2k
+  loaded) that is ≈ 10.3k tokens against the design's ≤ ~9k. An
+  estimate only: the loaded measurement asked for since 2026-10-28 is
+  still pending (register candidate "the word budget is the wrong
+  instrument"). DESIGN.md downside #6 names "the SPEC outgrows its
+  budget" as a trigger to reopen the packaging design.
+- **Residue of the v1.1.0 review, left to stand.** F6 (collapse-robust
+  form: "authors `SHOULD` prefer"), F8 (extend an existing trace note:
+  `SHOULD`) and F12 (refuse-by-handing-back names only "the
+  implementer") were judged minor and not changed; the review's list of
+  rules left in lowercase or imperative form beside converted ones was
+  not acted on, nor were the convention's smaller gaps: the
+  "mechanically checkable" claim has no check behind it and covers
+  capitals only, "restrained" and "sparingly" are untestable, files
+  with no `type` have no default voice, and `Register` has no keyword
+  rule (tape:
+  `episodes/2026-11-20-keyword-pass-review/findings-fresh-read.md`).
 - **Register rulings — deferred by Devon (2026-10-28), with a
-  consolidation proposed.** 34 candidates pend (27 in the register's
-  Candidates section before 2026-10-28, 7 added that day). Proposed
+  consolidation proposed.** 35 candidates pend (27 in the register's
+  Candidates section before 2026-10-28, 7 added that day, 1 on
+  2026-11-20). Proposed
   shape, for Devon's ruling when he takes it up — seven entries:
   *Entry 11* the verification-failure taxonomy completed (vacuous,
   unreachable, wrong-but-green; the error message is not the error;
@@ -84,21 +165,6 @@ replaced by one-line pointers when they do.
   priority over the law). *Hold:* the word budget. Weakest merges to
   question: comments→11, bundled decisions→12, harness config→13.
   Comprehension interviews on Devon's trigger.
-- **SPEC wording: "cross-model when one is available" (constitution,
-  "The reviewer") — sharpen at the next release.** Raised by Devon
-  (2026-10-29): one agy audit per episode is expensive — two relays by
-  hand plus Mark's citation check (Rule 6; agy fabricated quotes in two
-  of three runs). The law already requires only an unanchored review
-  (step 5); agy is one acceptable reviewer, not the mandated one, but
-  the phrase reads as "mandatory whenever another model exists".
-  Proposed: "cross-model when the brief calls for it", with the tier
-  living in the consumer profile's Reviewer section — default a
-  read-only Refiner; another model on law surfaces, conventions, the
-  gate, trace-note removals, or Devon's call at plan approval; the
-  brief's `reviewer:` records which. Cost of the tier, stated: a
-  same-model Refiner shares Mark's blind spots — this repo's first
-  episode's one law gap (the auto-load clause, F6) was found by agy
-  alone.
 - **Lesson → convention graduation hierarchy** (Devon's future ask, his
   trigger): document how register entries (case-law) graduate into
   binding conventions (law); precedent: Entry 2 → the constitution's

@@ -164,7 +164,7 @@ may load none of it, or only a stale snapshot; the spawner MUST inject
 the rules the Refiner needs, and when injecting rules or command
 sequences MUST pass load-bearing steps **verbatim, markers and failure
 rationale intact** — a paraphrased protocol is a collapsed protocol,
-and the child cannot know what the summary dropped. A spawner SHOULD
+and the child cannot know what the summary dropped. A spawner MUST
 give each Refiner the narrowest tool profile its job needs: a read-only
 profile is the one hard lever a spawner has. And know the boundary's
 shape: worktree isolation stops a Refiner's *git* commands from
@@ -188,7 +188,8 @@ or latitude exercised — and "no deviations" stated, never implied.
 A review is worth what its independence is worth. The reviewer MUST be
 a **fresh context** — a read-only Refiner, a second session, or another
 model — given the brief and the diff and **not** Mark's reasoning or
-conclusion; cross-model when one is available. Its findings MUST be
+conclusion. A cross-model review is REQUIRED only when the brief calls
+for it; the consumer profile says when briefs do. Its findings MUST be
 committed on the branch as data; Mark MUST verify them (Rule 6) and
 decide. A reviewer that cannot commit MUST either write the file or
 return its text for Mark to write, and Mark MUST commit it, both named

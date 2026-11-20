@@ -2,7 +2,7 @@
 
 ![Severed → Unsevered: two walled-off sessions converge into one lineage whose episodes keep their tapes](thumbnail-diagram.svg)
 
-![release v1.1.1](https://img.shields.io/badge/release-v1.1.1-blue)
+![release v1.1.2](https://img.shields.io/badge/release-v1.1.2-blue)
 
 The Severance workflow experiment — as of 2026-11-20.
 
@@ -136,7 +136,7 @@ containers and sandboxed local checkouts.
 
 The learnings register (`learnings.md`) records what each step taught,
 as dated entries with the step, the fact, the interpretation and who
-found it. Ten entries are ruled on; 34 candidates await ruling. The
+found it. Ten entries are ruled on; 35 candidates await ruling. The
 findings a technical reader will care about:
 
 - **A taxonomy of verification failures.** A check can be *skipped*
@@ -181,14 +181,15 @@ not bind; only mechanism does.
 
 ## Current status
 
-As of 2026-11-20 the repo is at **v1.1.1**, the fourth release of the
-Unsevered form; 53 commits and 11 release tags since the founding commit
+As of 2026-11-20 the repo is at **v1.1.2**, the fifth release of the
+Unsevered form; 54 commits and 12 release tags since the founding commit
 of 2026-07-08. One consumer project (Teppan) has run both forms of the
 workflow; the SPEC has been loaded into Claude Code and Antigravity
 sessions across three kinds of lane.
 
 | Date | Release | What changed |
 | --- | --- | --- |
+| 2026-11-20 | v1.1.2 | a retroactive review of the v1.1.0 keyword pass: five more rules restored; the guard on a rule's force runs both ways; cross-model review only when the brief calls for it |
 | 2026-11-20 | v1.1.1 | three rules softened by the v1.1.0 keyword pass restored to their original force |
 | 2026-11-19 | v1.1.0 | RFC 2119 + RFC 8174 modal keywords in the SPEC; epistemic voice by OKF document type |
 | 2026-10-29 | v1.0.1 | artifact frontmatter is valid YAML; the build quotes and lints it |
@@ -205,11 +206,11 @@ It was reviewed by a fresh-context agent and by a second model
 
 Open, in rough order of weight:
 
-- 34 register candidates await ruling; a consolidation into seven
+- 35 register candidates await ruling; a consolidation into seven
   entries is proposed in `NOTES.md`.
-- The reviewer wording in the constitution ("cross-model when one is
-  available") reads as mandatory and is to be sharpened at the next
-  release.
+- The v1.1.0 keyword pass left some rules in lowercase beside
+  converted ones, and three minor softenings stand; the review that
+  found them is in `episodes/2026-11-20-keyword-pass-review/`.
 - Consumer machinery (container config, fleet scripts, guards) still
   lives ungeneralized in the first consumer; shipping it as extractable
   assets is future work.

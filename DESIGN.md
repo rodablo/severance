@@ -153,7 +153,9 @@ learnings Entry 4).
    estimate (markdown-heavy prose tokenizes ~×2.3/word); current
    budget: **SPEC ≤ ~9k measured** (net cost to the first consumer was
    ≈ neutral vs the includes it replaced)
-   or it degrades silently.
+   or it degrades silently. *2026-11-20:* the `[spec]` sources are
+   5,700 words at v1.1.1 — ≈ 10.2k by the same ratio, over the budget
+   on paper and still unmeasured in a session (NOTES.md, open items).
 6. Calibrated to today's circumstances, not virtues: single author,
    prose-dominant law, whole-law adoption, few consumers. **Reopen this
    design when any of these flips:** contributor #2 arrives, selective

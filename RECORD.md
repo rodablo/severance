@@ -1,11 +1,11 @@
 ---
 type: Reference
 title: "SEVERANCE — experiment record (RECORD)"
-description: "The Severance experiment's narrative record — conceit, prior art, learnings register, the reintegration (Severance → Unsevered) and the trace of the retired machinery — built at v1.1.1. For human readers; not loaded into sessions."
+description: "The Severance experiment's narrative record — conceit, prior art, learnings register, the reintegration (Severance → Unsevered) and the trace of the retired machinery — built at v1.1.2. For human readers; not loaded into sessions."
 tags: [severance, record, experiment]
 timestamp: 2026-11-20
-version: 1.1.1
-built-from: v1.1.1
+version: 1.1.2
+built-from: v1.1.2
 ---
 
 <!-- ═══ source: conceit.md ═══ -->
@@ -952,6 +952,25 @@ the RECORD.
   3,878 → 4,985 words while the design's own yardstick is loaded
   tokens (≤ ~9k; v0.1.0 calibration 4.6k words → 8.2k). Interpretation,
   separated, pending: measure before trimming.
+- **A voice conversion is a semantic edit — and a one-way guard lets
+  the other direction through** (model finding, 2026-11-20, from a
+  read-only audit of v1.1.0). Facts: a Gemini session converted the
+  SPEC's prose to BCP 14 keywords in one release commit, with no brief,
+  findings or independent review; the convention it added forbids
+  hardening guidance into `MUST` and says nothing of softening; four
+  sentences came out weaker than they went in (a plain statement to
+  `SHOULD NOT`, an imperative to `SHOULD`, a stated safeguard to
+  `SHOULD`, a two-way alternative to `MAY`); three were restored at
+  v1.1.1. The same commit grew the `[spec]` sources 5,052 → 5,699 words
+  without naming the budget. A fresh-context review commissioned the
+  same day, not given the audit's list, reported the same four and
+  eight further changes — ten softenings in all by its count — so the
+  audit's four were a floor (tape:
+  `episodes/2026-11-20-keyword-pass-review/findings-fresh-read.md`).
+  Interpretation, separated: choosing a
+  keyword for a sentence that had none is a ruling on its force, not a
+  restyling — it wants the review a law change gets, and a guard
+  written against one failure direction certifies the opposite one.
 
 ## Backfill (pending)
 

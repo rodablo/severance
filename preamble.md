@@ -16,10 +16,9 @@ only sessions that read a repo, hold private memory, load configured
 context, and can spawn agents — it has been used with Claude Code and
 Antigravity.
 
-This artifact is generated — consumers MUST NOT hand-edit it; edit the
-sources in the Severance repo and re-release. Links in it MUST be
-absolute: it is read from vendored locations where repo-relative paths
-are dead.
+This artifact is generated — it MUST NOT be edited; edit the sources
+in the Severance repo and re-release. Links in it MUST be absolute: it
+is read from vendored locations where repo-relative paths are dead.
 
 **Normative keywords (BCP 14 — IETF RFC 2119, RFC 8174).** The key words
 `MUST`, `MUST NOT`, `REQUIRED`, `SHALL`, `SHALL NOT`, `SHOULD`,
@@ -48,7 +47,7 @@ principle governing them, live in the RECORD — the companion
 narrative artifact, `RECORD.md` (`conceit.md` upstream) — law here,
 lore there. Generic names used in this law's examples:
 **Lumon** = the generic company, **Cold Harbor** = the generic consumer
-project (doc-only terms; they MUST NOT name a real filesystem path).
+project (doc-only terms; they never name a real filesystem path).
 
 ## Adoption, in brief
 

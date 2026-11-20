@@ -1,11 +1,11 @@
 ---
 type: Convention
 title: "SEVERANCE — the Unsevered workflow (SPEC)"
-description: "The Severance workflow's binding law in its Unsevered form — constitution, the episodes convention and the other conventions, profile contract — amalgamated at v1.1.1. Vendored copy: do not edit; update by re-vendoring a release."
+description: "The Severance workflow's binding law in its Unsevered form — constitution, the episodes convention and the other conventions, profile contract — amalgamated at v1.1.2. Vendored copy: do not edit; update by re-vendoring a release."
 tags: [severance, spec, workflow, vendored]
 timestamp: 2026-11-20
-version: 1.1.1
-built-from: v1.1.1
+version: 1.1.2
+built-from: v1.1.2
 ---
 
 <!-- ═══ source: preamble.md ═══ -->
@@ -28,10 +28,9 @@ only sessions that read a repo, hold private memory, load configured
 context, and can spawn agents — it has been used with Claude Code and
 Antigravity.
 
-This artifact is generated — consumers MUST NOT hand-edit it; edit the
-sources in the Severance repo and re-release. Links in it MUST be
-absolute: it is read from vendored locations where repo-relative paths
-are dead.
+This artifact is generated — it MUST NOT be edited; edit the sources
+in the Severance repo and re-release. Links in it MUST be absolute: it
+is read from vendored locations where repo-relative paths are dead.
 
 **Normative keywords (BCP 14 — IETF RFC 2119, RFC 8174).** The key words
 `MUST`, `MUST NOT`, `REQUIRED`, `SHALL`, `SHALL NOT`, `SHOULD`,
@@ -60,7 +59,7 @@ principle governing them, live in the RECORD — the companion
 narrative artifact, `RECORD.md` (`conceit.md` upstream) — law here,
 lore there. Generic names used in this law's examples:
 **Lumon** = the generic company, **Cold Harbor** = the generic consumer
-project (doc-only terms; they MUST NOT name a real filesystem path).
+project (doc-only terms; they never name a real filesystem path).
 
 ## Adoption, in brief
 
@@ -245,7 +244,7 @@ may load none of it, or only a stale snapshot; the spawner MUST inject
 the rules the Refiner needs, and when injecting rules or command
 sequences MUST pass load-bearing steps **verbatim, markers and failure
 rationale intact** — a paraphrased protocol is a collapsed protocol,
-and the child cannot know what the summary dropped. A spawner SHOULD
+and the child cannot know what the summary dropped. A spawner MUST
 give each Refiner the narrowest tool profile its job needs: a read-only
 profile is the one hard lever a spawner has. And know the boundary's
 shape: worktree isolation stops a Refiner's *git* commands from
@@ -269,7 +268,8 @@ or latitude exercised — and "no deviations" stated, never implied.
 A review is worth what its independence is worth. The reviewer MUST be
 a **fresh context** — a read-only Refiner, a second session, or another
 model — given the brief and the diff and **not** Mark's reasoning or
-conclusion; cross-model when one is available. Its findings MUST be
+conclusion. A cross-model review is REQUIRED only when the brief calls
+for it; the consumer profile says when briefs do. Its findings MUST be
 committed on the branch as data; Mark MUST verify them (Rule 6) and
 decide. A reviewer that cannot commit MUST either write the file or
 return its text for Mark to write, and Mark MUST commit it, both named
@@ -426,8 +426,8 @@ one line per episode; plain `git log` reads the commit grain.
 
 Progress notes, partial findings, or a draft brief MUST be committed on
 the branch before the session ends (constitution, Rule 8). On ephemeral
-lanes uncommitted work dies with the lane — sessions SHOULD commit
-early, and MUST ask Devon before pushing (Rule 4).
+lanes uncommitted work dies with the lane — sessions MUST commit
+early, and MUST ask Devon for the push (Rule 4).
 
 ## Harness settings the convention depends on
 
@@ -435,9 +435,9 @@ early, and MUST ask Devon before pushing (Rule 4).
   default (verified 2026-10-28 in Claude Code: a local repo four
   commits ahead of origin spawned a Refiner that could not see them;
   Antigravity's `Workspace: branch` is documented as branching from
-  HEAD — unverified). Consumers worked on from a local checkout SHOULD
-  set Claude Code's `worktree.baseRef: "head"` in project settings, or
-  push before spawning.
+  HEAD — unverified). Consumers worked on from a local checkout MUST
+  either set Claude Code's `worktree.baseRef: "head"` in project
+  settings or push before spawning.
 - Worktree isolation is a **git** boundary, not a write boundary
   (verified 2026-10-28 in Claude Code, in both the sandboxed local lane
   and the cloud VM; other harnesses unverified): the harness refuses
@@ -649,8 +649,16 @@ to humans and sessions alike:
   Per RFC 2119 §6, imperatives MUST be used sparingly — rationale
   (`Why`), motivation, cast descriptions, and examples stay in natural
   prose — and per RFC 8174, lowercase `"must"`, `"should"`, and `"may"`
-  retain their ordinary English meaning. Authors MUST NOT harden
-  optional or default guidance into `MUST`.
+  retain their ordinary English meaning. The keyword follows the rule's
+  own stated reason: a rule whose reason is a harm (lost work, a write
+  outside its boundary, an unreviewed or unauthorized integration) is
+  an invariant and takes `MUST` / `MUST NOT`; a rule whose reason is
+  convenience, consistency, or style is a default and takes `SHOULD` /
+  `SHOULD NOT`. Authors MUST NOT harden optional or default guidance
+  into `MUST`, and MUST NOT soften an existing rule into `SHOULD` or
+  `MAY`: giving a sentence a keyword it did not have, or changing the
+  one it has, rules on its force — a change to the law, reviewed as
+  one.
 - **`Concept`, `Reference`, `Index`** (the consumer's knowledge tree of
   verified reality, reference records such as `RECORD.md`, and directory
   indexes) — **present-tense indicative voice** describing verified
@@ -684,6 +692,11 @@ paragraphs out of surrounding context. When descriptive notes borrow
 outdated description as law or unapproved direction as an instruction.
 Binding voice to `type` makes epistemic status local to the sentence and
 mechanically checkable.
+
+The guard on force runs both ways because the two failures differ in
+how they show. A hardened sentence over-binds and someone objects; a
+softened safety rule fails silently — the session that skips it is
+compliant.
 
 <!-- ═══ source: profile-contract.md ═══ -->
 
@@ -738,7 +751,10 @@ Who reviews — a read-only Refiner, a second session, another model —
 and how read-only is enforced for it (tool profile, plan mode, a deny
 rule). If the reviewer cannot commit, say how its findings reach the
 branch (it writes the file or returns its text; Mark commits, both
-attributed).
+attributed). The section MUST also say when a brief calls for a
+cross-model review instead of the default (e.g. changes to
+conventions or the gate, a trace-note removal, Devon's call at plan
+approval): a same-model reviewer shares Mark's blind spots.
 
 ## Implementation docs
 

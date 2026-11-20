@@ -104,8 +104,8 @@ one line per episode; plain `git log` reads the commit grain.
 
 Progress notes, partial findings, or a draft brief MUST be committed on
 the branch before the session ends (constitution, Rule 8). On ephemeral
-lanes uncommitted work dies with the lane — sessions SHOULD commit
-early, and MUST ask Devon before pushing (Rule 4).
+lanes uncommitted work dies with the lane — sessions MUST commit
+early, and MUST ask Devon for the push (Rule 4).
 
 ## Harness settings the convention depends on
 
@@ -113,9 +113,9 @@ early, and MUST ask Devon before pushing (Rule 4).
   default (verified 2026-10-28 in Claude Code: a local repo four
   commits ahead of origin spawned a Refiner that could not see them;
   Antigravity's `Workspace: branch` is documented as branching from
-  HEAD — unverified). Consumers worked on from a local checkout SHOULD
-  set Claude Code's `worktree.baseRef: "head"` in project settings, or
-  push before spawning.
+  HEAD — unverified). Consumers worked on from a local checkout MUST
+  either set Claude Code's `worktree.baseRef: "head"` in project
+  settings or push before spawning.
 - Worktree isolation is a **git** boundary, not a write boundary
   (verified 2026-10-28 in Claude Code, in both the sandboxed local lane
   and the cloud VM; other harnesses unverified): the harness refuses

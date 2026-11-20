@@ -37,3 +37,12 @@ topic are the identity.
   ([findings-fresh-read](2026-10-28-law-rewrite/findings-fresh-read.md),
   [findings-agy](2026-10-28-law-rewrite/findings-agy.md),
   [findings-self](2026-10-28-law-rewrite/findings-self.md)).
+
+## Reviews without a brief
+
+- [2026-11-20 — retroactive review of the v1.1.0 keyword pass](2026-11-20-keyword-pass-review/findings-fresh-read.md)
+  — release v1.1.0 shipped with no brief, findings or independent
+  review; a fresh-context Refiner compared the SPEC sources at v1.0.1
+  and v1.1.0 sentence by sentence a day later. Twelve findings on the
+  conversion: three fixed at v1.1.1, five more restored on Devon's
+  ruling, the rest left to stand.
