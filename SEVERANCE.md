@@ -1,11 +1,11 @@
 ---
 type: Convention
 title: "SEVERANCE — the Unsevered workflow (SPEC)"
-description: "The Severance workflow's binding law in its Unsevered form — constitution, the episodes convention and the other conventions, profile contract — amalgamated at v1.1.0. Vendored copy: do not edit; update by re-vendoring a release."
+description: "The Severance workflow's binding law in its Unsevered form — constitution, the episodes convention and the other conventions, profile contract — amalgamated at v1.1.1. Vendored copy: do not edit; update by re-vendoring a release."
 tags: [severance, spec, workflow, vendored]
-timestamp: 2026-11-19
-version: 1.1.0
-built-from: v1.1.0
+timestamp: 2026-11-20
+version: 1.1.1
+built-from: v1.1.1
 ---
 
 <!-- ═══ source: preamble.md ═══ -->
@@ -251,7 +251,7 @@ profile is the one hard lever a spawner has. And know the boundary's
 shape: worktree isolation stops a Refiner's *git* commands from
 reaching the main checkout; it does not stop a file write there
 (verified 2026-10-28 in Claude Code, local sandbox and cloud VM alike;
-other harnesses unverified). Briefs for worktree Refiners SHOULD state
+other harnesses unverified). Briefs for worktree Refiners MUST state
 "write only under your worktree"; a consumer MAY enforce it with a
 pre-tool hook.
 
@@ -271,9 +271,9 @@ a **fresh context** — a read-only Refiner, a second session, or another
 model — given the brief and the diff and **not** Mark's reasoning or
 conclusion; cross-model when one is available. Its findings MUST be
 committed on the branch as data; Mark MUST verify them (Rule 6) and
-decide. A reviewer that cannot commit MAY write the file or return its
-text for Mark to write, and Mark MUST commit it, both named in the
-attribution.
+decide. A reviewer that cannot commit MUST either write the file or
+return its text for Mark to write, and Mark MUST commit it, both named
+in the attribution.
 
 ## Refuse by handing back, never silently
 
@@ -338,7 +338,7 @@ Episodes MUST live at `episodes/<date>-<topic>/` at the repo root —
 notes, e.g. `knowledge/`), and MUST NOT be placed inside it: the
 knowledge tree holds what is currently true; episodes hold what
 happened. The directory MUST have its own `index.md` (draft, then
-pending, then merged) and SHOULD NOT be loaded into sessions by default
+pending, then merged) and is **not** loaded into sessions by default
 — it is consulted on demand ("why did X change?") and at session start,
 to list the pending episodes. Date and topic are the identity; there is
 no numbering, no seasons, no arcs.
@@ -399,10 +399,10 @@ own tape — `findings.md` when there is one, otherwise `findings-self.md`
 for the implementer's self-assessment and `findings-<reviewer>.md`
 for each reviewer — MUST NOT share a tape, and MUST commit it **on the
 branch** (when the reviewer cannot commit — a read-only session,
-another harness, another model — it MAY write the file or return the
-tape's text for Mark to write, and Mark MUST commit it with both named
-in the attribution trailers). Findings are data: Mark MUST verify their
-citations before acting on them.
+another harness, another model — it MUST either write the file or
+return the tape's text for Mark to write, and Mark MUST commit it with
+both named in the attribution trailers). Findings are data: Mark MUST
+verify their citations before acting on them.
 
 ## Status and closure
 
@@ -442,7 +442,7 @@ early, and MUST ask Devon before pushing (Rule 4).
   (verified 2026-10-28 in Claude Code, in both the sandboxed local lane
   and the cloud VM; other harnesses unverified): the harness refuses
   git commands aimed at the main checkout, but a plain file write into
-  it succeeds. Briefs for worktree Refiners SHOULD say "write only
+  it succeeds. Briefs for worktree Refiners MUST say "write only
   under your worktree"; a consumer MAY mechanize that with a pre-tool
   hook.
 - A Refiner's worktree branch MUST be folded into the episode branch by

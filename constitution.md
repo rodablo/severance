@@ -170,7 +170,7 @@ profile is the one hard lever a spawner has. And know the boundary's
 shape: worktree isolation stops a Refiner's *git* commands from
 reaching the main checkout; it does not stop a file write there
 (verified 2026-10-28 in Claude Code, local sandbox and cloud VM alike;
-other harnesses unverified). Briefs for worktree Refiners SHOULD state
+other harnesses unverified). Briefs for worktree Refiners MUST state
 "write only under your worktree"; a consumer MAY enforce it with a
 pre-tool hook.
 
@@ -190,9 +190,9 @@ a **fresh context** — a read-only Refiner, a second session, or another
 model — given the brief and the diff and **not** Mark's reasoning or
 conclusion; cross-model when one is available. Its findings MUST be
 committed on the branch as data; Mark MUST verify them (Rule 6) and
-decide. A reviewer that cannot commit MAY write the file or return its
-text for Mark to write, and Mark MUST commit it, both named in the
-attribution.
+decide. A reviewer that cannot commit MUST either write the file or
+return its text for Mark to write, and Mark MUST commit it, both named
+in the attribution.
 
 ## Refuse by handing back, never silently
 

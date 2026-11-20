@@ -16,7 +16,7 @@ Episodes MUST live at `episodes/<date>-<topic>/` at the repo root —
 notes, e.g. `knowledge/`), and MUST NOT be placed inside it: the
 knowledge tree holds what is currently true; episodes hold what
 happened. The directory MUST have its own `index.md` (draft, then
-pending, then merged) and SHOULD NOT be loaded into sessions by default
+pending, then merged) and is **not** loaded into sessions by default
 — it is consulted on demand ("why did X change?") and at session start,
 to list the pending episodes. Date and topic are the identity; there is
 no numbering, no seasons, no arcs.
@@ -77,10 +77,10 @@ own tape — `findings.md` when there is one, otherwise `findings-self.md`
 for the implementer's self-assessment and `findings-<reviewer>.md`
 for each reviewer — MUST NOT share a tape, and MUST commit it **on the
 branch** (when the reviewer cannot commit — a read-only session,
-another harness, another model — it MAY write the file or return the
-tape's text for Mark to write, and Mark MUST commit it with both named
-in the attribution trailers). Findings are data: Mark MUST verify their
-citations before acting on them.
+another harness, another model — it MUST either write the file or
+return the tape's text for Mark to write, and Mark MUST commit it with
+both named in the attribution trailers). Findings are data: Mark MUST
+verify their citations before acting on them.
 
 ## Status and closure
 
@@ -120,7 +120,7 @@ early, and MUST ask Devon before pushing (Rule 4).
   (verified 2026-10-28 in Claude Code, in both the sandboxed local lane
   and the cloud VM; other harnesses unverified): the harness refuses
   git commands aimed at the main checkout, but a plain file write into
-  it succeeds. Briefs for worktree Refiners SHOULD say "write only
+  it succeeds. Briefs for worktree Refiners MUST say "write only
   under your worktree"; a consumer MAY mechanize that with a pre-tool
   hook.
 - A Refiner's worktree branch MUST be folded into the episode branch by

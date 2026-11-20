@@ -2,9 +2,9 @@
 
 ![Severed → Unsevered: two walled-off sessions converge into one lineage whose episodes keep their tapes](thumbnail-diagram.svg)
 
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/rodablo/severance)
+![release v1.1.1](https://img.shields.io/badge/release-v1.1.1-blue)
 
-The Severance workflow experiment — as of 2026-11-19.
+The Severance workflow experiment — as of 2026-11-20.
 
 ## What this is
 
@@ -181,14 +181,15 @@ not bind; only mechanism does.
 
 ## Current status
 
-As of 2026-11-19 the repo is at **v1.1.0**, the third release of the
-Unsevered form; 52 commits and 10 release tags since the founding commit
+As of 2026-11-20 the repo is at **v1.1.1**, the fourth release of the
+Unsevered form; 53 commits and 11 release tags since the founding commit
 of 2026-07-08. One consumer project (Teppan) has run both forms of the
 workflow; the SPEC has been loaded into Claude Code and Antigravity
 sessions across three kinds of lane.
 
 | Date | Release | What changed |
 | --- | --- | --- |
+| 2026-11-20 | v1.1.1 | three rules softened by the v1.1.0 keyword pass restored to their original force |
 | 2026-11-19 | v1.1.0 | RFC 2119 + RFC 8174 modal keywords in the SPEC; epistemic voice by OKF document type |
 | 2026-10-29 | v1.0.1 | artifact frontmatter is valid YAML; the build quotes and lints it |
 | 2026-10-28 | v1.0.0 | Unsevered: the episode flow replaces the severed handoff; the host/container split retired |
